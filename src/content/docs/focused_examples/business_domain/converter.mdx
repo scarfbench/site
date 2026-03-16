@@ -1,0 +1,102 @@
+---
+title: "Converter"
+---
+
+Stateless session bean demonstrating currency conversion business logic.
+
+## Project Structure
+
+```
+converter/
+└── converter.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/converter/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── converter
+        │               ├── ejb
+        │               │   └── ConverterBean.java
+        │               └── web
+        │                   └── ConverterServlet.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── .gitkeep
+        └── webapp
+            └── WEB-INF
+                └── .gitkeep
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/converter/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── docker
+        │   ├── Dockerfile.jvm
+        │   ├── Dockerfile.legacy-jar
+        │   ├── Dockerfile.native
+        │   └── Dockerfile.native-micro
+        ├── java
+        │   └── quarkus
+        │       └── examples
+        │           └── tutorial
+        │               ├── ConverterBean.java
+        │               └── ConverterResource.java
+        └── resources
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/converter/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── examples
+        │           └── tutorial
+        │               └── converter
+        │                   ├── ConverterApplication.java
+        │                   ├── controller
+        │                   │   └── ConverterController.java
+        │                   └── service
+        │                       └── ConverterService.java
+        └── resources
+            └── application.properties
+```

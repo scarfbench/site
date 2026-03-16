@@ -1,0 +1,100 @@
+---
+title: "File Upload"
+---
+
+Servlet file upload using `@MultipartConfig` for multipart/form-data handling.
+
+## Project Structure
+
+```
+fileupload/
+└── fileupload.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/fileupload/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── fileupload
+        │               └── FileUploadServlet.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── .gitkeep
+        └── webapp
+            ├── WEB-INF
+            │   ├── .gitkeep
+            │   └── web.xml
+            └── index.html
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/fileupload/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── fileupload
+        │               ├── FileUploadForm.java
+        │               └── FileUploadServlet.java
+        └── resources
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── WEB-INF
+            │   │   │   └── web.xml
+            │   │   └── index.html
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/fileupload/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── tutorial
+        │           └── fileupload
+        │               ├── FileUploadApplication.java
+        │               └── FileUploadController.java
+        └── resources
+            ├── .gitkeep
+            ├── application.properties
+            └── static
+                └── index.html
+```

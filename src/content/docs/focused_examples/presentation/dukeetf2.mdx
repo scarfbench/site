@@ -1,0 +1,122 @@
+---
+title: "Duke ETF 2"
+---
+
+WebSocket server endpoint for bidirectional real-time communication.
+
+## Project Structure
+
+```
+dukeetf2/
+└── dukeetf2.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf2/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── web
+        │               └── dukeetf2
+        │                   ├── ETFEndpoint.java
+        │                   └── PriceVolumeBean.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── .gitkeep
+        └── webapp
+            ├── WEB-INF
+            │   └── .gitkeep
+            ├── index.html
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf2/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── web
+        │               └── dukeetf2
+        │                   ├── ETFEndpoint.java
+        │                   └── PriceVolumeBean.java
+        └── resources
+            ├── .gitkeep
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── WEB-INF
+            │   │   │   └── web.xml
+            │   │   ├── index.html
+            │   │   └── resources
+            │   │       └── css
+            │   │           └── default.css
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf2/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── index.html
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── spring
+    │   │       └── tutorial
+    │   │           └── web
+    │   │               └── dukeetf2
+    │   │                   ├── DukeEtfApplication.java
+    │   │                   ├── ETFEndpoint.java
+    │   │                   └── PriceVolumeBean.java
+    │   └── resources
+    │       ├── .gitkeep
+    │       ├── application.properties
+    │       └── static
+    │           ├── css
+    │           │   └── default.css
+    │           └── index.html
+    └── test
+        └── java
+            └── spring
+                └── tutorial
+                    └── web
+                        └── dukeetf2
+                            ├── ContextLoadsTest.java
+                            └── WebSocketIT.java
+```

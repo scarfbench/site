@@ -1,0 +1,284 @@
+---
+title: "Quickstart Guide"
+---
+
+import { Tabs, TabItem, CardGrid } from '@astrojs/starlight/components';
+
+<style>{`
+  .card-grid {
+    grid-template-columns: 100% !important;
+  }
+`}</style>
+
+This guide will help walk you through the following two tasks:
+
+- Preparing your agent for evaluation on scarfbench including setting up the necessary configuration files and directory structure.
+- Running your agent with the benchmark applications
+
+### Pre-requisites
+
+For the purposes of this guide, we will assume that you have installed the `scarf` cli tool. If you haven't already, you can follow the instructions [here](/site/installing/) to install it. You can verify the installation by running `scarf --help`.
+
+```text
+ScarfBench CLI: The command line helper tool for scarf bench
+
+Usage: scarf [OPTIONS] <COMMAND>
+
+Commands:
+  bench  A series of subcommands to run on the benchmark applications.
+  eval   Subcommands to run evaluation over the benchmark
+  help   Print this message or the help of the given subcommand(s)
+
+Options:
+  -v, --verbose...  Increase verbosity (-v, -vv, -vvv).
+  -h, --help        Print help
+  -V, --version     Print version
+```
+
+## Preparing Your Agent
+
+This section describes how to structure an agent implementation so it can be executed by the `scarf` CLI during evaluation runs.
+
+<div class="sb-note-box">
+  <strong><i class="fa-solid fa-fire" aria-hidden="true" style="margin-right: 0.4rem;"></i>A note about `scarf eval`</strong>  `scarf` does not attempt to interpret your code or prompts. It only knows how to run your agent (based on the `agent.toml` you have specified and the entrypoint contained within) and where results should go (based on the `--eval-out` flag).
+</div>
+
+
+### Agent Directory Structure
+
+To get started, create an agent directory with the following structure:
+
+```sh
+<agent-name>/
+    └── agent.toml  # <-  REQUIRED
+    └── run.sh      # <-  OPTIONAL/RECOMMENDED wrapper script to wrap your agent's main executable 
+                    #     must be specified as the entrypoint in `agent.toml`)
+```
+
+> **Some remarks on the structure**
+> 1. Files other than `agent.toml` and `run.sh` are agent-defined, unconstrained, and private to your implementation.
+> 2. The only required contract is:
+>    - a metadata file (`agent.toml`)
+>    - an executable entrypoint (`run.sh`)
+
+#### `agent.toml` file
+
+The `agent.toml` file is a required configuration file that provides metadata about your agent. It should include the following fields:
+
+| Field | Required | Description |
+|------|----------|-------------|
+| `name` | yes | Logical name of the agent (used in run metadata and reporting) |
+| `entrypoint` | yes | Command (relative to agent directory) used to run the agent |
+
+##### Minimal example
+
+```toml
+name = "example-application-migrator-agent"
+entrypoint = ["run.sh"]
+```
+
+> The `scarf` CLI executes the entrypoint exactly as specified relative to the agent directory. For example, if your entrypoint is `run.sh`, and your agent directory is `/path/to/agent-dir`, `scarf` executes `/path/to/agent-dir/run.sh` when running your agent.
+
+### `run.sh`
+
+`run.sh` is the executable that `scarf eval run` command runs to execute your agent. `scarf` sets the following environment variables before calling your `run.sh`:
+
+```bash
+SCARF_WORK_DIR       # Output/work directory. Do not write outside this directory.
+SCARF_FRAMEWORK_FROM # Source framework.
+SCARF_FRAMEWORK_TO   # Target framework.
+```
+
+In your implementation, you can assume that these environment variables are set when your `run.sh` is executed.
+
+### Writing a baseline migration agent
+
+Let's look at what a typical implementation looks like for a migration agent based on OpenAI's `codex` CLI. A similar structure can be used for other LLM-based agents.
+
+<div class="sb-note-box">
+  <strong><i class="fa-solid fa-fire" aria-hidden="true" style="margin-right: 0.4rem;"></i> For a full working example, see <a href="https://github.com/scarfbench/scarfbench-evals/tree/main/agents/codex-cli" target="_blank" rel="noopener noreferrer">scarfbench-evals/agents/codex-cli</a>.</strong>
+</div>
+
+
+#### 1) Recommended directory layout
+
+We start with the following structure:
+
+```bash
+agents/codex-cli/
+├── agent.toml
+├── run.sh
+└── skills/
+    ├── spring-to-quarkus/
+    │   └── SKILL.md
+    ├── jakarta-to-quarkus/
+    │   └── SKILL.md
+    ├── spring-to-jakarta/
+    │   └── SKILL.md
+    # ... other conversion pairs
+```
+
+Each `SKILL.md` can contain migration instructions for exactly one conversion pair. 
+
+> **Note:** A full `spring-to-quarkus` example is provided [here](https://github.com/scarfbench/scarfbench-evals/blob/main/agents/codex-cli/skills/spring-to-quarkus/) in the scafbench-evals repository.
+
+#### 2) `agent.toml` for Codex
+
+Use an entrypoint that points to your shell wrapper:
+
+```toml
+name        = "codex-framework-migration"
+description = "Sample implementation of a framework-migration agent for ScarfBench."
+entrypoint  = "./run.sh"
+```
+
+#### 3) A typical `run.sh` declaration
+
+Your `run.sh` could follow this pattern:
+
+1. Resolve script-local paths (for example, `skills/`).
+2. Read required env vars:
+    - `SCARF_WORK_DIR` 
+    - `SCARF_FRAMEWORK_FROM`
+    - `SCARF_FRAMEWORK_TO`
+3. Validate all required values and fail fast with clear stderr messages.
+4. Normalize framework names (for example, map aliases like `springboot` -> `spring`).
+5. Build the conversion key `${from}-to-${to}` and verify `skills/<pair>/SKILL.md` exists.
+6. Verify the `codex` CLI is installed and available in `PATH`.
+7. Prepare managed helper files inside `SCARF_WORK_DIR`:
+  - Create a local `.agent/skills` symlink to the selected skill directory.
+  - Create/update `AGENTS.md` so Codex can discover the active skill.
+  - Backup any existing `AGENTS.md` and restore it on exit.
+8. Run `codex exec` in headless mode against `SCARF_WORK_DIR` with a migration prompt.
+9. Always clean up temporary links/files with a trap handler.
+
+
+When executing the Codex command, use a workspace-restricted execution mode and set cwd to the scarf work directory:
+
+```bash
+codex -a never exec \
+  --sandbox workspace-write \
+  --skip-git-repo-check \
+  -C "$SCARF_WORK_DIR" \
+  "$PROMPT"
+```
+
+This keeps writes constrained to the evaluation workspace and makes execution deterministic for batch runs.
+
+> **Note:** A full `run.sh` shell example is provided [here](https://github.com/scarfbench/scarfbench-evals/blob/main/agents/codex-cli/run.sh) in the scafbench-evals repository.
+
+
+**Some additional recommended practices**
+
+- Keep framework-specific logic in `skills/<pair>/SKILL.md`, not hardcoded into prompt strings.
+- Keep `run.sh` focused on orchestration: validation, routing, setup, invocation, cleanup.
+- Normalize aliases so scorer-provided framework names do not break pair resolution.
+- Print concise diagnostics to stderr and use non-zero exits for invalid inputs.
+- Ensure no writes happen outside `$SCARF_WORK_DIR`.
+- Keep the public wrapper minimal; private internals can remain outside this repository.
+
+## Evaluating the agent
+
+Once you have your agent implementation ready, you can evaluate its performance using ScarfBench's evaluation framework. 
+
+The `scarf` CLI provides an `eval` subcommand to run evaluations and collect metrics on your agent's performance. Run the following command to see the available options:
+
+```bash
+❯ scarf eval -h
+```
+The output should look something like this:
+```
+Evaluate an agent on Scarfbench
+
+Usage: scarf eval run [OPTIONS] --benchmark-dir <DIR> --agent-dir <DIR> --source-framework <FRAMEWORK> --target-framework <FRAMEWORK> --eval-out <EVAL_OUT>
+
+Options:
+      --benchmark-dir <DIR>           Path (directory) to the benchmark.
+  -v, --verbose...                    Increase verbosity (-v, -vv, -vvv).
+      --agent-dir <DIR>               Path (directory) to agent implementation harness.
+      --layer <LAYER>                 Application layer to run agent on.
+      --app <APP>                     Application to run the agent on. If layer is specified, this app must lie within that layer.
+      --source-framework <FRAMEWORK>  The source framework for conversion.
+      --target-framework <FRAMEWORK>  The target framework for conversion.
+  -p, --pass-at-k <K>                 Value of K to run for generating an Pass@K value. [default: 1]
+      --eval-out <EVAL_OUT>           Output directory where the agent runs and evaluation output are stored.
+  -j, --jobs <JOBS>                   Number of parallel jobs to run. [default: 1]
+      --prepare-only                  Prepare the evaluation harness to run agents. Think of this as a dry run before actually deploying the agents.
+  -h, --help                          Print help
+```
+
+You can call this command with the appropriate arguments to run the evaluation. For example, assuming you pulled the benchmark directory to `~/path/to/benchmark`, and you wrote your agent directory at `~/site/agents/codex-migration-cli` (as per the previous section), and you want to evaluate the conversion from `spring` to `quarkus`, you could run:
+
+```bash
+scarf eval run \
+  --benchmark-dir ~/path/to/benchmark \             # <-- Directory where the benchmark was pulled to
+  --agent-dir /tmp/agents/codex-migration-cli \     # <-- Directory where the agent (incl. run.sh/agent.toml) is located
+  --source-framework spring \                       # <-- Source framework for conversion
+  --target-framework quarkus \                      # <-- Target framework for conversion
+  --layer business_domain \                         # <-- Application layer to run the agent on
+  --app cart \                                      # <-- Application to run the agent on
+  --eval-out /tmp/eval-out \                        # <-- Output directory for evaluation results
+  --pass-at-k 1 \                                   # <-- Pass@K value to run for (default: 1)
+```
+
+This should produce output like the following:
+```log
+[2026-02-26T15:15:37Z DEBUG scarf::eval::run] Preparing evaluation harness at /tmp/eval_out
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Using agent name: codex-cli
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Preparing eval for application at path: /tmp/benchmark/business_domain/cart
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Created eval instance directory: /tmp/eval_out/codex-cli__business_domain__cart__spring__quarkus/run_1
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Created eval metadata file in: /tmp/eval_out/codex-cli__business_domain__cart__spring__quarkus/run_1
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Created input directory: /tmp/eval_out/codex-cli__business_domain__cart__spring__quarkus/run_1/input and seeded it with the source framework
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Created output directory: /tmp/eval_out/codex-cli__business_domain__cart__spring__quarkus/run_1/output and seeded it with the source framework
+[2026-02-26T15:15:37Z DEBUG scarf::eval::prepare] Created validation directory: /tmp/eval_out/codex-cli__business_domain__cart__spring__quarkus/run_1/validation
+[2026-02-26T15:15:37Z DEBUG scarf::eval::run] Dispatching Agent(s)
+```
+
+## After the Run
+
+Once the `scarf eval run ...` is complete, you can check the output directory (`/tmp/eval_out` in this case) for the results of the evaluation. 
+
+The directory structure will contain the following:
+
+```
+/tmp/eval_out
+└── run_1
+    ├── input           # <-- Input directory for the agent's source framework code resides (for reference)
+    ├── output          # <-- Output directory for the agent's converted code resides
+    ├── validation      # <-- Validation directory contains the agent's stdout and stderr
+    │   ├── agent.err   # <-- Stderr from the agent's run
+    │   └── agent.out   # <-- Stdout from the agent's run
+    └── metadata.json   # <-- Metadata about the evaluation run (useful for leaderboard ranking)
+```
+
+The `validation` directory contains the stdout and stderr from the agent's run!
+
+You can use the scarf validate command to validate the output against the target framework.
+
+```bash
+scarf validate -vv \
+    --conversions-dir /tmp/eval_out/ \  # <-- Output directory for evaluation results were agent ran 
+    --benchmark-dir /tmp/benchmark/     # <-- Directory where the benchmark was pulled to
+```
+
+#### What Happens here?
+This will run the validation process, checking the converted code in the `/tmp/eval_out` directory by running 
+`make test`. This gives us---
+
+1. Update the `validation` directory with the results of the validation and create a `run.log` file with the validation 
+results of make test
+2. The output directory `validation` will also have a `trajectory.md` which will have a full record of the agent's trajectory. This is optional if the agent is configured to do so.
+
+```
+/tmp/eval_out
+└── run_1
+    ├── input           
+    ├── output          
+    ├── validation      
+    │   ├── agent.err   
+    │   ├── agent.out   
+    │   ├── trajectory.md   # <-- This file contains the agent's trajectory
+    │   └── run.log         # <-- This file contains the results of the validation
+    └── metadata.json   
+```
+

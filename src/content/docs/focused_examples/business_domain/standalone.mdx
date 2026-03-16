@@ -1,0 +1,121 @@
+---
+title: "Standalone"
+---
+
+Stateless session bean for standalone EJB container usage.
+
+## Project Structure
+
+```
+standalone/
+└── standalone.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/standalone/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── standalone
+    │   │               ├── ejb
+    │   │               │   └── StandaloneBean.java
+    │   │               └── web
+    │   │                   ├── GreetResource.java
+    │   │                   └── RestApplication.java
+    │   ├── liberty
+    │   │   └── config
+    │   │       └── server.xml
+    │   └── resources
+    │       └── META-INF
+    │           └── MANIFEST.MF
+    └── test
+        └── java
+            └── jakarta
+                └── tutorial
+                    └── standalone
+                        └── ejb
+                            └── StandaloneBeanTest.java
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/standalone/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile.jvm
+    │   │   ├── Dockerfile.legacy-jar
+    │   │   ├── Dockerfile.native
+    │   │   └── Dockerfile.native-micro
+    │   ├── java
+    │   │   └── quarkus
+    │   │       └── examples
+    │   │           └── tutorial
+    │   │               ├── GreetResource.java
+    │   │               └── StandaloneBean.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── quarkus
+                └── examples
+                    └── tutorial
+                        └── StandaloneBeanTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/standalone/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── spring
+    │   │       └── examples
+    │   │           └── tutorial
+    │   │               └── standalone
+    │   │                   ├── StandaloneApplication.java
+    │   │                   ├── controller
+    │   │                   │   └── GreetController.java
+    │   │                   └── service
+    │   │                       └── StandaloneService.java
+    │   └── resources
+    │       └── application.properties
+    └── test
+        └── java
+            └── spring
+                └── examples
+                    └── tutorial
+                        └── standalone
+                            └── StandaloneApplicationTests.java
+```

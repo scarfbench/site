@@ -1,0 +1,137 @@
+---
+title: "JAX-RS Customer"
+---
+
+JAX-RS REST API with CRUD operations, JPA entities, and client invocation.
+
+## Project Structure
+
+```
+jaxrs-customer/
+└── jaxrs-customer.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-customer/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── customer
+    │   │               ├── data
+    │   │               │   ├── Address.java
+    │   │               │   └── Customer.java
+    │   │               ├── ejb
+    │   │               │   ├── CustomerBean.java
+    │   │               │   └── CustomerManager.java
+    │   │               └── resource
+    │   │                   ├── CustomerApplication.java
+    │   │                   └── CustomerService.java
+    │   ├── liberty
+    │   │   └── config
+    │   │       └── server.xml
+    │   ├── resources
+    │   │   └── META-INF
+    │   │       └── persistence.xml
+    │   └── webapp
+    │       ├── WEB-INF
+    │       │   ├── faces-config.xml
+    │       │   └── web.xml
+    │       ├── error.xhtml
+    │       ├── index.xhtml
+    │       └── list.xhtml
+    └── test
+        └── java
+            └── .gitkeep
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-customer/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── quarkus
+    │   │       └── tutorial
+    │   │           └── customer
+    │   │               ├── data
+    │   │               │   ├── Address.java
+    │   │               │   └── Customer.java
+    │   │               ├── ejb
+    │   │               │   ├── CustomerBean.java
+    │   │               │   └── CustomerManager.java
+    │   │               └── resource
+    │   │                   └── CustomerService.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── resources
+    │       │   │   ├── WEB-INF
+    │       │   │   │   └── web.xml
+    │       │   │   ├── error.xhtml
+    │       │   │   ├── index.xhtml
+    │       │   │   └── list.xhtml
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── .gitkeep
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-customer/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── spring
+    │   │       └── tutorial
+    │   │           └── customer
+    │   │               ├── CustomerApplication.java
+    │   │               ├── data
+    │   │               │   ├── Address.java
+    │   │               │   └── Customer.java
+    │   │               ├── ejb
+    │   │               │   ├── CustomerBean.java
+    │   │               │   └── CustomerManager.java
+    │   │               └── resource
+    │   │                   └── CustomerService.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   └── resources
+    │       │       ├── error.xhtml
+    │       │       ├── index.xhtml
+    │       │       └── list.xhtml
+    │       └── application.properties
+    └── test
+        └── java
+            └── .gitkeep
+```

@@ -1,0 +1,90 @@
+---
+title: "Submit Conversions"
+---
+
+This page demonstrates how you package the results of a ScarfBench evaluation and submit them as a pull request to the repository `github.com/scarfbench/submit.git`.
+
+We assume you have the `scarf` CLI installed (see [Setup](/site/installing/)) and that you've run an evaluation producing an `--eval-out` directory containing the conversion results.
+
+### Overview
+
+- Prepare the conversion artifacts from your evaluation output.
+- Create a dedicated branch, add the conversion files and metadata.
+- Push the branch to `github.com/scarfbench/submit.git` and open a pull request.
+
+### Prepare the artifacts (all eval runs)
+
+If you want to submit the entire evaluation output tree (for example `/tmp/eval_out`) as-is, copy the whole `eval_out` directory into your submission payload. This is the simplest approach when you want to preserve every run and its context.
+
+```bash
+# Root containing one or more agent eval directories (each may contain run_* subdirs)
+EVAL_ROOT=/tmp/eval_out
+PAYLOAD=/tmp/submit-payload
+mkdir -p "$PAYLOAD"
+
+# Copy the whole eval_out tree into the payload
+cp -a "$EVAL_ROOT" "$PAYLOAD/eval_out"
+```
+
+This places the full `eval_out` hierarchy under `/tmp/submit-payload/eval_out`. Verify the payload contains only evaluation artifacts and no secrets or files external to the eval output.
+
+### Create a branch and commit
+
+```bash
+cd /tmp/submit-payload
+git init
+git remote add origin https://github.com/scarfbench/submit.git
+git checkout -b submit/$(date +%Y%m%d)-all-evals
+git add .
+git commit -m "Submit: full eval_out submission ($(date +%Y%m%d))"
+```
+
+If you have a fork or push privileges, push the branch. If not, fork the repo on GitHub and change the `origin` remote to your fork URL before pushing.
+
+```bash
+git push origin HEAD
+```
+
+### Open the pull request
+
+Open a pull request on GitHub against `github.com/scarfbench/submit.git` with a descriptive title and body. For multi-run submissions, include:
+
+- Which conversion pairs are included (list or summarize).
+- Which agents produced the conversions (agent names from `agent.toml`).
+- Paths to the eval runs (examples under `/tmp/eval_out/.../run_*`).
+- Any validation results or notes (attach `validation.log` files or paste relevant excerpts).
+
+Suggested PR title and body for a full `eval_out` submission:
+
+```
+Title: Submit conversions: full eval_out submission (agents: codex-cli, ...)
+
+Body:
+- Agents included: codex-cli, <other-agents>
+- Eval root: `eval_out/` (full evaluation output included under `eval_out/`)
+- Contents: complete evaluation outputs including per-run `input/`, `output/`, `validation/`, and `metadata.json`
+- Validation: see `validation/*.run.log` files inside the `eval_out` tree
+
+Notes:
+- This submission contains the entire `eval_out` directory produced by `scarf eval run`. Reviewers can inspect individual runs under `eval_out/<agent>/<run_*>`.
+```
+
+### Verify submission locally
+
+Before opening the PR, you can run local validation steps to sanity-check the submission. For example, validate each run's conversions (replace paths accordingly):
+
+```bash
+# Validate each run directory found in the payload
+scarf validate -vv --conversions-dir /tmp/submit-payload/eval_out --benchmark-dir /path/to/benchmark 
+```
+
+### What to include and what to avoid
+
+- Include: `conversions/` tree, `metadata.json`, `validation.log`, and a short README describing how the conversion was produced.
+- Avoid: any secrets, API keys, or large binaries. Only include what is necessary for reviewers to validate the conversion.
+
+### Review checklist for maintainers
+
+- [ ] Confirm agent metadata (`metadata.json`) identifies the agent and run.
+- [ ] Confirm conversion tree builds or runs basic tests (where possible).
+- [ ] Check `validation.log` for failing tests or obvious errors.

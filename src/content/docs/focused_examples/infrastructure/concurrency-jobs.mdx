@@ -1,0 +1,132 @@
+---
+title: "Concurrency Jobs"
+---
+
+ManagedExecutorService with `@Resource` injection for concurrent task execution.
+
+## Project Structure
+
+```
+concurrency-jobs/
+└── concurrency-jobs.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-jobs/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── concurrency
+        │               └── jobs
+        │                   ├── client
+        │                   │   └── JobClient.java
+        │                   └── service
+        │                       ├── JobService.java
+        │                       └── TokenStore.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── index.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-jobs/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── concurrency
+        │               └── jobs
+        │                   ├── RestApplication.java
+        │                   ├── client
+        │                   │   ├── JobClient.java
+        │                   │   └── JobServiceClient.java
+        │                   └── service
+        │                       ├── ExecutorProducers.java
+        │                       ├── JobService.java
+        │                       └── TokenStore.java
+        └── resources
+            ├── META-INF
+            │   └── resources
+            │       ├── WEB-INF
+            │       │   └── web.xml
+            │       ├── index.xhtml
+            │       └── resources
+            │           └── css
+            │               └── default.css
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-jobs/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── concurrency
+        │               └── jobs
+        │                   ├── Application.java
+        │                   ├── client
+        │                   │   ├── JobClient.java
+        │                   │   └── JobServiceClient.java
+        │                   ├── exec
+        │                   │   ├── ExecutorConfig.java
+        │                   │   ├── High.java
+        │                   │   └── Low.java
+        │                   ├── store
+        │                   │   └── TokenStore.java
+        │                   └── web
+        │                       └── JobsController.java
+        └── resources
+            ├── META-INF
+            │   ├── WEB-INF
+            │   │   └── web.xml
+            │   ├── index.xhtml
+            │   └── resources
+            │       └── css
+            │           └── default.css
+            └── application.properties
+```

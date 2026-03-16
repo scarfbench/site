@@ -1,0 +1,131 @@
+---
+title: "Mood"
+---
+
+Servlet filters and listeners for request/response processing and lifecycle events.
+
+## Project Structure
+
+```
+mood/
+└── mood.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/mood/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── mood
+        │               ├── MoodServlet.java
+        │               ├── SimpleServletListener.java
+        │               └── TimeOfDayFilter.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── .gitkeep
+        └── webapp
+            ├── WEB-INF
+            │   └── .gitkeep
+            └── resources
+                └── images
+                    ├── duke.cookies.gif
+                    ├── duke.handsOnHips.gif
+                    ├── duke.pensive.gif
+                    ├── duke.snooze.gif
+                    ├── duke.thumbsup.gif
+                    └── duke.waving.gif
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/mood/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── mood
+        │               ├── MoodServlet.java
+        │               ├── SimpleServletListener.java
+        │               └── TimeOfDayFilter.java
+        └── resources
+            ├── .gitkeep
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── WEB-INF
+            │   │   │   └── web.xml
+            │   │   └── images
+            │   │       ├── duke.cookies.gif
+            │   │       ├── duke.handsOnHips.gif
+            │   │       ├── duke.pensive.gif
+            │   │       ├── duke.snooze.gif
+            │   │       ├── duke.thumbsup.gif
+            │   │       └── duke.waving.gif
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/mood/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── spring
+    │   │       └── tutorial
+    │   │           └── mood
+    │   │               ├── MoodApplication.java
+    │   │               └── web
+    │   │                   ├── MoodController.java
+    │   │                   ├── SimpleServletListener.java
+    │   │                   └── TimeOfDayFilter.java
+    │   └── resources
+    │       ├── .gitkeep
+    │       └── static
+    │           └── images
+    │               ├── duke.cookies.gif
+    │               ├── duke.handsOnHips.gif
+    │               ├── duke.pensive.gif
+    │               ├── duke.snooze.gif
+    │               ├── duke.thumbsup.gif
+    │               └── duke.waving.gif
+    └── test
+        └── java
+            └── spring
+                └── tutorial
+                    └── mood
+                        └── we
+                            └── MoodControllerTest.java
+```

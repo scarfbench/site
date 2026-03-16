@@ -1,0 +1,153 @@
+---
+title: "Bill Payment"
+---
+
+CDI with `@Inject`, custom qualifiers, interceptors, and event observers.
+
+## Project Structure
+
+```
+billpayment/
+└── billpayment.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/billpayment/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── billpayment
+        │               ├── event
+        │               │   └── PaymentEvent.java
+        │               ├── interceptor
+        │               │   ├── Logged.java
+        │               │   └── LoggedInterceptor.java
+        │               ├── listener
+        │               │   └── PaymentHandler.java
+        │               └── payment
+        │                   ├── Credit.java
+        │                   ├── Debit.java
+        │                   └── PaymentBean.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   ├── beans.xml
+            │   └── web.xml
+            ├── index.xhtml
+            ├── resources
+            │   └── css
+            │       └── default.css
+            └── response.xhtml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/billpayment/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile.jvm
+    │   │   ├── Dockerfile.legacy-jar
+    │   │   ├── Dockerfile.native
+    │   │   └── Dockerfile.native-micro
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── billpayment
+    │   │               ├── event
+    │   │               │   └── PaymentEvent.java
+    │   │               ├── interceptor
+    │   │               │   ├── Logged.java
+    │   │               │   └── LoggedInterceptor.java
+    │   │               ├── listener
+    │   │               │   └── PaymentHandler.java
+    │   │               └── payment
+    │   │                   ├── Credit.java
+    │   │                   ├── Debit.java
+    │   │                   └── PaymentBean.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── faces-config.xml
+    │       │   ├── resources
+    │       │   │   ├── index.xhtml
+    │       │   │   ├── resources
+    │       │   │   │   └── css
+    │       │   │   │       └── default.css
+    │       │   │   └── response.xhtml
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── jakarta
+                └── tutorial
+                    └── billpayment
+                        └── payment
+                            └── PaymentFlowTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/billpayment/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── org
+        │       └── springframework
+        │           └── tutorial
+        │               └── billpayment
+        │                   ├── BillPaymentApplication.java
+        │                   ├── aspect
+        │                   │   ├── Logged.java
+        │                   │   └── LoggingAspect.java
+        │                   ├── controller
+        │                   │   └── PaymentController.java
+        │                   ├── event
+        │                   │   └── PaymentEvent.java
+        │                   ├── listener
+        │                   │   └── PaymentHandler.java
+        │                   └── payment
+        │                       ├── PaymentService.java
+        │                       └── PaymentType.java
+        └── resources
+            ├── application.properties
+            ├── static
+            │   └── css
+            │       └── default.css
+            └── templates
+                ├── index.html
+                └── response.html
+```

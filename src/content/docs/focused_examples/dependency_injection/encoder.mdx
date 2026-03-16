@@ -1,0 +1,142 @@
+---
+title: "Encoder"
+---
+
+CDI with `@Alternative` implementations for conditional bean selection.
+
+## Project Structure
+
+```
+encoder/
+└── encoder.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/encoder/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── encoder
+        │               ├── Coder.java
+        │               ├── CoderBean.java
+        │               ├── CoderImpl.java
+        │               └── TestCoderImpl.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   ├── beans.xml
+            │   └── web.xml
+            ├── index.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/encoder/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile.jvm
+    │   │   ├── Dockerfile.legacy-jar
+    │   │   ├── Dockerfile.native
+    │   │   └── Dockerfile.native-micro
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── encoder
+    │   │               ├── Coder.java
+    │   │               ├── CoderBean.java
+    │   │               ├── CoderImpl.java
+    │   │               └── TestCoderImpl.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── resources
+    │       │   │   ├── index.xhtml
+    │       │   │   └── resources
+    │       │   │       └── css
+    │       │   │           └── default.css
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── jakarta
+                └── tutorial
+                    └── encoder
+                        ├── AlternateCoderBeanTest.java
+                        ├── AlternateTestProfile.java
+                        └── CoderBeanTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/encoder/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── springframework
+    │   │           └── tutorial
+    │   │               └── encoder
+    │   │                   ├── EncoderApplication.java
+    │   │                   ├── controller
+    │   │                   │   └── CoderController.java
+    │   │                   ├── dto
+    │   │                   │   └── CoderForm.java
+    │   │                   └── service
+    │   │                       ├── Coder.java
+    │   │                       ├── CoderImpl.java
+    │   │                       └── TestCoderImpl.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       │   └── css
+    │       │       └── default.css
+    │       └── templates
+    │           └── index.html
+    └── test
+        └── java
+            └── org
+                └── springframework
+                    └── tutorial
+                        └── encoder
+                            ├── ContextLoadsTest.java
+                            └── controller
+                                ├── AlternateCoderControllerTest.java
+                                └── CoderControllerTest.java
+```

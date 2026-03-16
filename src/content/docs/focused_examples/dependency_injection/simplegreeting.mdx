@@ -1,0 +1,141 @@
+---
+title: "Simple Greeting"
+---
+
+Basic CDI dependency injection with `@Inject` and custom qualifiers.
+
+## Project Structure
+
+```
+simplegreeting/
+└── simplegreeting.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/simplegreeting/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── simplegreeting
+        │               ├── Greeting.java
+        │               ├── Informal.java
+        │               ├── InformalGreeting.java
+        │               └── Printer.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── index.xhtml
+            ├── resources
+            │   └── css
+            │       └── default.css
+            └── template.xhtml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/simplegreeting/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile.jvm
+    │   │   ├── Dockerfile.legacy-jar
+    │   │   ├── Dockerfile.native
+    │   │   └── Dockerfile.native-micro
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── simplegreeting
+    │   │               ├── Greeting.java
+    │   │               ├── Informal.java
+    │   │               ├── InformalGreeting.java
+    │   │               └── Printer.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── resources
+    │       │   │   ├── index.xhtml
+    │       │   │   ├── resources
+    │       │   │   │   └── css
+    │       │   │   │       └── default.css
+    │       │   │   └── template.xhtml
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── jakarta
+                └── tutorial
+                    └── simplegreeting
+                        └── PrinterTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/simplegreeting/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── springframework
+    │   │           └── tutorial
+    │   │               └── simplegreeting
+    │   │                   ├── Application.java
+    │   │                   ├── Informal.java
+    │   │                   ├── controller
+    │   │                   │   └── PrinterController.java
+    │   │                   ├── dto
+    │   │                   │   └── PrinterForm.java
+    │   │                   └── service
+    │   │                       ├── Greeting.java
+    │   │                       └── InformalGreeting.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       │   └── css
+    │       │       └── default.css
+    │       └── templates
+    │           ├── index.html
+    │           └── template.html
+    └── test
+        └── java
+            └── org
+                └── springframework
+                    └── tutorial
+                        └── simplegreeting
+                            ├── ContextLoadsTest.java
+                            └── controller
+                                └── PrinterControllerTest.java
+```

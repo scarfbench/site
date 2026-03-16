@@ -1,0 +1,165 @@
+---
+title: "Address Book"
+---
+
+JPA entities with JSF frontend using CRUD operations via EntityManager.
+
+## Project Structure
+
+```
+address-book/
+└── address-book.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/address-book/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── addressbook
+        │               ├── ejb
+        │               │   ├── AbstractFacade.java
+        │               │   └── ContactFacade.java
+        │               ├── entity
+        │               │   └── Contact.java
+        │               └── web
+        │                   ├── ContactController.java
+        │                   └── util
+        │                       ├── JsfUtil.java
+        │                       └── PaginationHelper.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   ├── Bundle.properties
+        │   ├── META-INF
+        │   │   └── persistence.xml
+        │   └── ValidationMessages.properties
+        └── webapp
+            ├── WEB-INF
+            │   ├── faces-config.xml
+            │   └── web.xml
+            ├── contact
+            │   ├── Create.xhtml
+            │   ├── Edit.xhtml
+            │   ├── List.xhtml
+            │   └── View.xhtml
+            ├── index.xhtml
+            ├── resources
+            │   └── css
+            │       └── jsfcrud.css
+            └── template.xhtml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/address-book/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── addressbook
+        │               ├── ejb
+        │               │   ├── AbstractFacade.java
+        │               │   └── ContactFacade.java
+        │               ├── entity
+        │               │   └── Contact.java
+        │               └── web
+        │                   ├── ContactController.java
+        │                   └── util
+        │                       ├── JsfUtil.java
+        │                       └── PaginationHelper.java
+        └── resources
+            ├── Bundle.properties
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── WEB-INF
+            │   │   │   ├── faces-config.xml
+            │   │   │   └── web.xml
+            │   │   ├── contact
+            │   │   │   ├── Create.xhtml
+            │   │   │   ├── Edit.xhtml
+            │   │   │   ├── List.xhtml
+            │   │   │   └── View.xhtml
+            │   │   ├── index.xhtml
+            │   │   ├── resources
+            │   │   │   └── css
+            │   │   │       └── jsfcrud.css
+            │   │   └── template.xhtml
+            │   └── web.xml
+            ├── ValidationMessages.properties
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/address-book/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── example
+        │           └── addressbookspring
+        │               ├── Application.java
+        │               ├── ServletInitializer.java
+        │               ├── config
+        │               │   ├── JsfConfig.java
+        │               │   └── SpringConfig.java
+        │               ├── entity
+        │               │   └── Contact.java
+        │               ├── repo
+        │               │   └── ContactRepository.java
+        │               ├── service
+        │               │   └── ContactService.java
+        │               └── web
+        │                   └── ContactController.java
+        └── resources
+            ├── Bundle.properties
+            ├── META-INF
+            │   ├── faces-config.xml
+            │   └── resources
+            │       ├── contact
+            │       │   ├── Create.xhtml
+            │       │   ├── Edit.xhtml
+            │       │   ├── List.xhtml
+            │       │   └── View.xhtml
+            │       ├── css
+            │       │   └── jsfcrud.css
+            │       ├── index.xhtml
+            │       └── template.xhtml
+            ├── ValidationMessages.properties
+            └── application.properties
+```

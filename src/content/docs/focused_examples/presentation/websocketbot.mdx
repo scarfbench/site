@@ -1,0 +1,145 @@
+---
+title: "WebSocket Bot"
+---
+
+WebSocket encoders/decoders with session management for chat application.
+
+## Project Structure
+
+```
+websocketbot/
+└── websocketbot.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/websocketbot/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── web
+        │               └── websocketbot
+        │                   ├── BotBean.java
+        │                   ├── BotEndpoint.java
+        │                   ├── decoders
+        │                   │   └── MessageDecoder.java
+        │                   ├── encoders
+        │                   │   ├── ChatMessageEncoder.java
+        │                   │   ├── InfoMessageEncoder.java
+        │                   │   ├── JoinMessageEncoder.java
+        │                   │   └── UsersMessageEncoder.java
+        │                   └── messages
+        │                       ├── ChatMessage.java
+        │                       ├── InfoMessage.java
+        │                       ├── JoinMessage.java
+        │                       ├── Message.java
+        │                       └── UsersMessage.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── .gitkeep
+        └── webapp
+            ├── WEB-INF
+            │   └── beans.xml
+            ├── index.html
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/websocketbot/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── websocket
+        │               ├── BotBean.java
+        │               ├── BotEndpoint.java
+        │               └── messages
+        │                   ├── ChatMessage.java
+        │                   ├── InfoMessage.java
+        │                   ├── JoinMessage.java
+        │                   ├── Message.java
+        │                   └── UsersMessage.java
+        └── resources
+            ├── META-INF
+            │   ├── beans.xml
+            │   └── resources
+            │       ├── index.html
+            │       └── resources
+            │           └── css
+            │               └── default.css
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/websocketbot/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── simple_test.py
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── tutorial
+        │           └── web
+        │               └── websocketbot
+        │                   ├── BotEndpoint.java
+        │                   ├── WebsocketBotApplication.java
+        │                   ├── config
+        │                   │   └── SpringEndpointConfigurator.java
+        │                   ├── decoders
+        │                   │   └── MessageDecoder.java
+        │                   ├── encoders
+        │                   │   ├── ChatMessageEncoder.java
+        │                   │   ├── InfoMessageEncoder.java
+        │                   │   ├── JoinMessageEncoder.java
+        │                   │   └── UsersMessageEncoder.java
+        │                   ├── messages
+        │                   │   ├── ChatMessage.java
+        │                   │   ├── InfoMessage.java
+        │                   │   ├── JoinMessage.java
+        │                   │   ├── Message.java
+        │                   │   └── UsersMessage.java
+        │                   └── service
+        │                       └── BotService.java
+        └── resources
+            ├── .gitkeep
+            └── static
+                ├── css
+                │   └── default.css
+                └── index.html
+```

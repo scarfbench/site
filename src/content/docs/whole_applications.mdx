@@ -1,0 +1,56 @@
+---
+title: "Whole Applications"
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+
+Complete, production-grade application examples demonstrating the coordination and integration of multiple Java EE layers and technologies.
+
+## Examples
+
+<style>{`
+  .sb-grid-card-item {
+    display: block;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--sl-color-gray-4);
+    border-left: 1px solid var(--sl-color-gray-4);
+    border-radius: 10px;
+    background: var(--sl-color-gray-6);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.32);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .sb-grid-card-item strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+`}</style>
+
+<CardGrid>
+  <a class="sb-grid-card-item" href="/site/cargotracker/">
+    <strong><i class="fa-solid fa-cube" aria-hidden="true" style="margin-right: 0.4rem;"></i>CargoTracker</strong>
+    Domain-Driven Design cargo shipping tracker with web UI, REST API, batch processing, and rich domain modeling.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/coffee_shop/">
+    <strong><i class="fa-solid fa-cube" aria-hidden="true" style="margin-right: 0.4rem;"></i>Coffee Shop</strong>
+    Event-driven microservices with Orders, Barista, and Kitchen services coordinated via Apache Kafka.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/daytrader/">
+    <strong><i class="fa-solid fa-cube" aria-hidden="true" style="margin-right: 0.4rem;"></i>DayTrader</strong>
+    Online stock trading benchmark showcasing transaction-heavy enterprise workload patterns.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/petclinic/">
+    <strong><i class="fa-solid fa-cube" aria-hidden="true" style="margin-right: 0.4rem;"></i>PetClinic</strong>
+    Full-featured veterinary clinic management app with CRUD workflows and rich entity relationships.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/realworld/">
+    <strong><i class="fa-solid fa-cube" aria-hidden="true" style="margin-right: 0.4rem;"></i>RealWorld</strong>
+    Medium.com-style Conduit implementation with JWT auth, articles, comments, tags, and favorites.
+  </a>
+</CardGrid>

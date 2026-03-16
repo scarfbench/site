@@ -1,0 +1,155 @@
+---
+title: "JAX-RS RSVP"
+---
+
+JAX-RS with JPA entities, startup lifecycle, and RESTful CRUD.
+
+## Project Structure
+
+```
+jaxrs-rsvp/
+└── jaxrs-rsvp.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-rsvp/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── rsvp
+        │               ├── ejb
+        │               │   ├── ConfigBean.java
+        │               │   ├── ResponseBean.java
+        │               │   └── StatusBean.java
+        │               ├── entity
+        │               │   ├── Event.java
+        │               │   ├── Person.java
+        │               │   └── Response.java
+        │               ├── rest
+        │               │   └── RsvpApplication.java
+        │               ├── util
+        │               │   └── ResponseEnum.java
+        │               └── web
+        │                   ├── EventManager.java
+        │                   └── StatusManager.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── META-INF
+        │       └── persistence.xml
+        └── webapp
+            ├── WEB-INF
+            │   ├── faces-config.xml
+            │   └── web.xml
+            ├── attendee.xhtml
+            ├── event.xhtml
+            ├── index.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-rsvp/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── rsvp
+        │               ├── ejb
+        │               │   ├── ConfigBean.java
+        │               │   ├── ResponseBean.java
+        │               │   └── StatusBean.java
+        │               ├── entity
+        │               │   ├── Event.java
+        │               │   ├── Person.java
+        │               │   └── Response.java
+        │               ├── util
+        │               │   └── ResponseEnum.java
+        │               └── web
+        │                   ├── EventManager.java
+        │                   └── StatusManager.java
+        └── resources
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── WEB-INF
+            │   │   │   └── web.xml
+            │   │   ├── attendee.xhtml
+            │   │   ├── event.xhtml
+            │   │   ├── index.xhtml
+            │   │   └── resources
+            │   │       └── css
+            │   │           └── default.css
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-rsvp/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── tutorial
+        │           └── rsvp
+        │               ├── RsvpApplication.java
+        │               ├── config
+        │               │   └── JsfConfig.java
+        │               ├── ejb
+        │               │   ├── ConfigInitializer.java
+        │               │   ├── ResponseController.java
+        │               │   └── StatusController.java
+        │               ├── entity
+        │               │   ├── Event.java
+        │               │   ├── Person.java
+        │               │   └── Response.java
+        │               ├── util
+        │               │   └── ResponseEnum.java
+        │               └── web
+        │                   ├── EventManager.java
+        │                   └── StatusManager.java
+        └── resources
+            ├── META-INF
+            │   ├── faces-config.xml
+            │   └── resources
+            │       ├── attendee.xhtml
+            │       ├── css
+            │       │   └── default.css
+            │       ├── event.xhtml
+            │       └── index.xhtml
+            └── application.properties
+```

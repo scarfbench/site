@@ -1,0 +1,112 @@
+---
+title: "Installing ScarfBench"
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+ScarfBench uses the `scarf` command line tool to pull benchmark assets, run evaluations, and work with submissions.
+
+## Install Options
+
+Choose one installation method.
+
+<Tabs>
+  <TabItem label="Shell Script">
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/scarfbench/scarf/releases/latest/download/scarfbench-cli-installer.sh | sh
+```
+  </TabItem>
+  <TabItem label="Homebrew">
+```bash
+brew tap scarfbench/tap
+brew install scarfbench-cli
+```
+  </TabItem>
+  <TabItem label="Cargo">
+```bash
+cargo install scarfbench-cli
+```
+  </TabItem>
+  <TabItem label="npm">
+```bash
+npm install @scarfbench/scarfbench-cli
+```
+  </TabItem>
+  <TabItem label="Source">
+```bash
+git clone https://github.com/scarfbench/scarf.git
+cd scarf
+cargo install --path . --root "$HOME/.local"
+```
+Add `$HOME/.local/bin` to your `PATH` if needed.
+  </TabItem>
+</Tabs>
+
+## Verify Installation
+
+```bash
+scarf --help
+```
+
+You should see CLI help output. For most users, the core commands needed post install are:
+
+<table border="2" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th><strong>Group</strong></th>
+      <th><strong>Command</strong></th>
+      <th><strong>Purpose</strong></th>
+      <th><strong>Link</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Benchmark setup</strong></td>
+      <td><code>scarf bench pull</code></td>
+      <td>Download benchmark files for local evaluation</td>
+      <td><a href="#pull-the-benchmark-recommended-first-action">Command help</a></td>
+    </tr>
+    <tr>
+      <td rowspan="2"><strong>Agent evaluation</strong></td>
+      <td><code>scarf eval</code></td>
+      <td>Evaluate agents on benchmark</td>
+      <td><a href="/site/quickstart/#running-the-benchmark">Go to section</a></td>
+    </tr>
+    <tr>
+      <td><code>scarf eval run</code></td>
+      <td>Run agent evaluation jobs</td>
+      <td><a href="/site/quickstart/#running-the-benchmark">Command help</a></td>
+    </tr>
+  </tbody>
+</table>
+
+## Getting the Benchmark
+
+Use `scarf bench pull` to download the benchmark to a local directory.
+
+##### Basic usage
+
+```bash
+scarf bench pull --dest /path/to/scarfbench-data
+```
+
+This creates or updates a local benchmark checkout in `/path/to/scarfbench-data`.
+
+
+##### Pull a specific benchmark version
+
+```bash
+scarf bench pull --dest ./scarfbench-data --version <VERSION>
+```
+
+Replace `<VERSION>` with the release or version identifier you want to evaluate against.
+
+##### Parameters
+
+- `--dest <DIR>`: required destination directory where benchmark files will be pulled
+- `--version <VERSION>`: optional version selector; if omitted, the latest available version is pulled
+
+## Next Step
+
+After pulling, use `scarf eval ...` commands to run your agent evaluations. Continue with the [Quickstart Guide](/site/quickstart/) to run your first evaluation.

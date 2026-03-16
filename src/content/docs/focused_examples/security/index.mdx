@@ -1,0 +1,37 @@
+---
+title: "Security"
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+
+Authentication and authorization patterns featuring Jakarta Security identity stores, form-based and basic authentication, EJB security, role-based access control, and password hashing.
+
+<style>{`
+  .sb-grid-card-item {
+    display: block;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--sl-color-gray-4);
+    border-left: 1px solid var(--sl-color-gray-4);
+    border-radius: 10px;
+    background: var(--sl-color-gray-6);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.32);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .sb-grid-card-item strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+`}</style>
+
+## Examples
+
+<CardGrid>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/built-in-db-identity-store/"><strong>built-in-db-identity-store</strong>Jakarta Security `@DatabaseIdentityStoreDefinition` with Pbkdf2PasswordHash.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/custom-identity-store/"><strong>custom-identity-store</strong>Custom IdentityStore implementation with `@ApplicationScoped` CDI bean.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/security-cart-secure/"><strong>security-cart-secure</strong>EJB security with `@DeclareRoles` and `@RolesAllowed` annotations.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/security-converter-secure/"><strong>security-converter-secure</strong>Servlet-based security with declarative role-based access control.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/security-hello1-formauth/"><strong>security-hello1-formauth</strong>Form-based authentication with `@FormAuthenticationMechanismDefinition`.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/security-hello2-basicauth/"><strong>security-hello2-basicauth</strong>HTTP Basic authentication with `@BasicAuthenticationMechanismDefinition`.</a>
+</CardGrid>

@@ -1,0 +1,158 @@
+---
+title: "Producer Fields"
+---
+
+CDI producer fields for EntityManager injection and resource management.
+
+## Project Structure
+
+```
+producerfields/
+└── producerfields.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/producerfields/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── producerfields
+        │               ├── db
+        │               │   ├── UserDatabase.java
+        │               │   └── UserDatabaseEntityManager.java
+        │               ├── ejb
+        │               │   └── RequestBean.java
+        │               ├── entity
+        │               │   └── ToDo.java
+        │               └── web
+        │                   └── ListBean.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── META-INF
+        │       └── persistence.xml
+        └── webapp
+            ├── WEB-INF
+            │   ├── glassfish-resources.xml
+            │   └── web.xml
+            ├── index.xhtml
+            ├── resources
+            │   └── css
+            │       └── default.css
+            └── todolist.xhtml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/producerfields/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile.jvm
+    │   │   ├── Dockerfile.legacy-jar
+    │   │   ├── Dockerfile.native
+    │   │   └── Dockerfile.native-micro
+    │   ├── java
+    │   │   └── jakarta
+    │   │       └── tutorial
+    │   │           └── producerfields
+    │   │               ├── db
+    │   │               │   ├── UserDatabase.java
+    │   │               │   └── UserDatabaseEntityManager.java
+    │   │               ├── ejb
+    │   │               │   └── RequestBean.java
+    │   │               ├── entity
+    │   │               │   └── ToDo.java
+    │   │               └── web
+    │   │                   └── ListBean.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── resources
+    │       │   │   ├── index.xhtml
+    │       │   │   ├── resources
+    │       │   │   │   └── css
+    │       │   │   │       └── default.css
+    │       │   │   └── todolist.xhtml
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── jakarta
+                └── tutorial
+                    └── producerfields
+                        └── ListBeanTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/dependency_injection/producerfields/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── org
+    │   │       └── springframework
+    │   │           └── tutorial
+    │   │               └── producerfields
+    │   │                   ├── Application.java
+    │   │                   ├── controller
+    │   │                   │   └── ListController.java
+    │   │                   ├── db
+    │   │                   │   ├── DbConfig.java
+    │   │                   │   └── UserDatabase.java
+    │   │                   ├── dto
+    │   │                   │   └── ToDoForm.java
+    │   │                   ├── entity
+    │   │                   │   └── ToDo.java
+    │   │                   └── service
+    │   │                       └── RequestService.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       │   └── css
+    │       │       └── default.css
+    │       └── templates
+    │           ├── index.html
+    │           └── todolist.html
+    └── test
+        └── java
+            └── org
+                └── springframework
+                    └── tutorial
+                        └── producerfields
+                            ├── ContextLoadsTest.java
+                            └── controller
+                                └── ListControllerTest.java
+```

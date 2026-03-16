@@ -1,0 +1,168 @@
+---
+title: "Order"
+---
+
+JPA entity relationships with composite keys and join tables.
+
+## Project Structure
+
+```
+order/
+└── order.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/order/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── order
+        │               ├── ejb
+        │               │   ├── ConfigBean.java
+        │               │   └── RequestBean.java
+        │               ├── entity
+        │               │   ├── CustomerOrder.java
+        │               │   ├── LineItem.java
+        │               │   ├── LineItemKey.java
+        │               │   ├── Part.java
+        │               │   ├── PartKey.java
+        │               │   ├── Vendor.java
+        │               │   └── VendorPart.java
+        │               └── web
+        │                   └── OrderManager.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        ├── resources
+        │   └── META-INF
+        │       └── persistence.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── lineItem-template.xhtml
+            ├── lineItem.xhtml
+            ├── order-template.xhtml
+            ├── order.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/order/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── docker
+        │   ├── Dockerfile.jvm
+        │   ├── Dockerfile.legacy-jar
+        │   ├── Dockerfile.native
+        │   └── Dockerfile.native-micro
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── order
+        │               ├── entity
+        │               │   ├── CustomerOrder.java
+        │               │   ├── LineItem.java
+        │               │   ├── LineItemKey.java
+        │               │   ├── Part.java
+        │               │   ├── PartKey.java
+        │               │   ├── Vendor.java
+        │               │   └── VendorPart.java
+        │               ├── repository
+        │               │   ├── CustomerOrderRepository.java
+        │               │   ├── LineItemRepository.java
+        │               │   ├── PartRepository.java
+        │               │   ├── VendorPartRepository.java
+        │               │   └── VendorRepository.java
+        │               ├── service
+        │               │   └── OrderConfigService.java
+        │               └── web
+        │                   ├── OrderController.java
+        │                   ├── OrderWebController.java
+        │                   └── StartupInitializer.java
+        └── resources
+            ├── application.properties
+            ├── css
+            │   └── default.css
+            └── templates
+                ├── lineItemTemplate.html
+                ├── lineItems.html
+                ├── orderTemplate.html
+                └── orders.html
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/persistence/order/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── com
+        │       └── example
+        │           └── orderspring
+        │               ├── OrderApplication.java
+        │               ├── entity
+        │               │   ├── CustomerOrder.java
+        │               │   ├── LineItem.java
+        │               │   ├── LineItemKey.java
+        │               │   ├── Part.java
+        │               │   ├── PartKey.java
+        │               │   ├── Vendor.java
+        │               │   └── VendorPart.java
+        │               ├── repository
+        │               │   ├── CustomerOrderRepository.java
+        │               │   ├── LineItemRepository.java
+        │               │   ├── PartRepository.java
+        │               │   ├── VendorPartRepository.java
+        │               │   └── VendorRepository.java
+        │               ├── service
+        │               │   ├── DataInitializationService.java
+        │               │   └── OrderService.java
+        │               └── web
+        │                   └── OrderManager.java
+        └── resources
+            ├── META-INF
+            │   └── resources
+            │       ├── lineItem-template.xhtml
+            │       ├── lineItem.xhtml
+            │       ├── order-template.xhtml
+            │       ├── order.xhtml
+            │       └── resources
+            │           └── css
+            │               └── default.css
+            └── application.properties
+```

@@ -1,0 +1,105 @@
+---
+title: "EJB Interceptor"
+---
+
+EJB interceptors for method-level cross-cutting concerns.
+
+## Project Structure
+
+```
+ejb-interceptor/
+└── ejb-interceptor.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/ejb-interceptor/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── interceptor
+        │               └── ejb
+        │                   ├── HelloBean.java
+        │                   └── HelloInterceptor.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── index.xhtml
+            └── response.xhtml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/ejb-interceptor/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── quarkus
+        │       └── tutorial
+        │           └── interceptor
+        │               ├── HelloBean.java
+        │               ├── HelloInterceptor.java
+        │               └── Lowercase.java
+        └── resources
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── index.xhtml
+            │   │   └── response.xhtml
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/ejb-interceptor/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── interceptor
+        │               └── ejb
+        │                   ├── Application.java
+        │                   ├── HelloController.java
+        │                   ├── HelloForm.java
+        │                   ├── Lowercase.java
+        │                   ├── LowercaseStringConverter.java
+        │                   └── WebConfig.java
+        └── resources
+            ├── application.properties
+            └── templates
+                ├── index.html
+                └── response.html
+```

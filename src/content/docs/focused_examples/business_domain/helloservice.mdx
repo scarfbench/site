@@ -1,0 +1,97 @@
+---
+title: "Hello Service"
+---
+
+JAX-WS web service implemented as a stateless session bean.
+
+## Project Structure
+
+```
+helloservice/
+└── helloservice.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/helloservice/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── helloservice
+        │               └── ejb
+        │                   └── HelloServiceBean.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── resources
+            └── META-INF
+                └── MANIFEST.MF
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/helloservice/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── docker
+        │   ├── Dockerfile.jvm
+        │   ├── Dockerfile.legacy-jar
+        │   ├── Dockerfile.native
+        │   └── Dockerfile.native-micro
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── helloservice
+        │               └── ejb
+        │                   └── HelloServiceBean.java
+        └── resources
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/helloservice/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── examples
+        │           └── tutorial
+        │               └── helloservice
+        │                   ├── HelloServiceApplication.java
+        │                   ├── HelloServiceBean.java
+        │                   └── WebServiceConfig.java
+        └── resources
+            ├── application.properties
+            └── hello.xsd
+```

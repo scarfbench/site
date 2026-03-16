@@ -1,0 +1,120 @@
+---
+title: "Duke ETF"
+---
+
+Async servlet with server-sent events for real-time updates.
+
+## Project Structure
+
+```
+dukeetf/
+└── dukeetf.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── web
+        │               └── dukeetf
+        │                   ├── DukeETFServlet.java
+        │                   └── PriceVolumeBean.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── main.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── quarkus
+    │   │       └── tutorial
+    │   │           └── web
+    │   │               └── dukeetf
+    │   │                   ├── DukeETFServlet.java
+    │   │                   └── PriceVolumeService.java
+    │   └── resources
+    │       ├── META-INF
+    │       │   ├── resources
+    │       │   │   ├── WEB-INF
+    │       │   │   │   └── web.xml
+    │       │   │   ├── main.xhtml
+    │       │   │   └── resources
+    │       │   │       └── css
+    │       │   │           └── default.css
+    │       │   └── web.xml
+    │       └── application.properties
+    └── test
+        └── java
+            └── quarkus
+                └── tutorial
+                    └── web
+                        └── dukeetf
+                            ├── JsfSmokeTest.java
+                            └── LongPollSmokeTest.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/dukeetf/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── spring
+        │       └── tutorial
+        │           └── web
+        │               └── dukeetf
+        │                   ├── DukeETFApplication.java
+        │                   ├── DukeETFServlet.java
+        │                   ├── PriceVolumeBean.java
+        │                   └── WebConfig.java
+        └── resources
+            ├── META-INF
+            │   └── resources
+            │       ├── main.xhtml
+            │       └── resources
+            │           └── css
+            │               └── default.css
+            └── application.properties
+```

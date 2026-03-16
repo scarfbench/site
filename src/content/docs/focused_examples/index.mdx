@@ -1,0 +1,64 @@
+---
+title: "Focused Examples"
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+
+Application examples organized per layer, where each example demonstrates a specific technology or concern within that layer.
+
+<style>{`
+  .sb-grid-card-item {
+    display: block;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--sl-color-gray-4);
+    border-left: 1px solid var(--sl-color-gray-4);
+    border-radius: 10px;
+    background: var(--sl-color-gray-6);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.32);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .sb-grid-card-item strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+`}</style>
+
+<CardGrid>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/">
+    <strong><i class="fa-solid fa-briefcase" aria-hidden="true" style="margin-right: 0.4rem;"></i>Business Domain</strong>
+    Core business logic implementations using Enterprise JavaBeans and common enterprise domain patterns.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/dependency_injection/">
+    <strong><i class="fa-solid fa-plug" aria-hidden="true" style="margin-right: 0.4rem;"></i>Dependency Injection</strong>
+    CDI injection patterns including qualifiers, decorators, alternatives, and producers.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/infrastructure/">
+    <strong><i class="fa-solid fa-server" aria-hidden="true" style="margin-right: 0.4rem;"></i>Infrastructure</strong>
+    Cross-cutting enterprise services such as executors, timers, async EJB methods, and interceptors.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/integration/">
+    <strong><i class="fa-solid fa-link" aria-hidden="true" style="margin-right: 0.4rem;"></i>Integration</strong>
+    Batch, JMS, JAX-WS, and connector examples for external system and service integration.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/persistence/">
+    <strong><i class="fa-solid fa-database" aria-hidden="true" style="margin-right: 0.4rem;"></i>Persistence</strong>
+    Data access and entity relationship patterns with JPA, JPQL, and CRUD workflows.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/presentation/">
+    <strong><i class="fa-solid fa-display" aria-hidden="true" style="margin-right: 0.4rem;"></i>Presentation</strong>
+    Web and API layer examples with servlets, JAX-RS, WebSocket, filters, and listeners.
+  </a>
+
+  <a class="sb-grid-card-item" href="/site/focused_examples/security/">
+    <strong><i class="fa-solid fa-shield-halved" aria-hidden="true" style="margin-right: 0.4rem;"></i>Security</strong>
+    Authentication and authorization patterns with Jakarta Security and role-based controls.
+  </a>
+</CardGrid>

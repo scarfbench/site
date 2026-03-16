@@ -1,0 +1,119 @@
+---
+title: "Concurrency Task Creator"
+---
+
+Managed executors for async tasks with WebSocket updates.
+
+## Project Structure
+
+```
+concurrency-taskcreator/
+└── concurrency-taskcreator.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-taskcreator/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── taskcreator
+        │               ├── InfoEndpoint.java
+        │               ├── JAXRSApplication.java
+        │               ├── Task.java
+        │               ├── TaskCreatorBean.java
+        │               └── TaskEJB.java
+        ├── liberty
+        │   └── config
+        │       └── server.xml
+        └── webapp
+            ├── WEB-INF
+            │   └── web.xml
+            ├── index.xhtml
+            └── resources
+                └── css
+                    └── default.css
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-taskcreator/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── taskcreator
+        │               ├── InfoEndpoint.java
+        │               ├── Task.java
+        │               ├── TaskCreatorBean.java
+        │               ├── TaskRestPoster.java
+        │               ├── TaskService.java
+        │               └── TaskUpdateEvents.java
+        └── resources
+            ├── META-INF
+            │   ├── resources
+            │   │   ├── index.xhtml
+            │   │   └── resources
+            │   │       └── css
+            │   │           └── default.css
+            │   └── web.xml
+            └── application.properties
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/infrastructure/concurrency-taskcreator/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── README.md
+├── pom.xml
+├── smoke.py
+├── src
+│   └── main
+│       ├── java
+│       │   └── jakarta
+│       │       └── tutorial
+│       │           └── taskcreator
+│       │               ├── InfoWebSocketHandler.java
+│       │               ├── Task.java
+│       │               ├── TaskCreatorApplication.java
+│       │               ├── TaskCreatorBean.java
+│       │               ├── TaskRestPoster.java
+│       │               ├── TaskService.java
+│       │               ├── TaskUpdateEvents.java
+│       │               └── config
+│       │                   ├── ExecutorsConfig.java
+│       │                   ├── HttpClientConfig.java
+│       │                   └── WebSocketConfig.java
+│       └── resources
+│           └── application.properties
+└── wrapper
+    └── maven-wrapper.properties
+```

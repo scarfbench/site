@@ -1,0 +1,146 @@
+---
+title: "Cart"
+---
+
+Stateful session bean with shopping cart lifecycle management and `@Remove` methods.
+
+## Project Structure
+
+```
+cart/
+└── cart.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/cart/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── cart-ejb
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           ├── java
+│           │   └── jakarta
+│           │       └── tutorial
+│           │           └── cart
+│           │               ├── ejb
+│           │               │   ├── Cart.java
+│           │               │   └── CartBean.java
+│           │               └── util
+│           │                   ├── BookException.java
+│           │                   └── IdVerifier.java
+│           └── resources
+│               └── META-INF
+│                   └── MANIFEST.MF
+├── cart-web
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           ├── java
+│           │   └── jakarta
+│           │       └── tutorial
+│           │           └── cart
+│           │               └── web
+│           │                   ├── CartResource.java
+│           │                   └── RestApplication.java
+│           ├── liberty
+│           │   └── config
+│           │       └── server.xml
+│           └── webapp
+│               └── WEB-INF
+│                   └── beans.xml
+├── pom.xml
+└── smoke.py
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/cart/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── cart-ejb
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           └── java
+│               └── quarkus
+│                   └── tutorial
+│                       └── cart
+│                           ├── service
+│                           │   ├── Cart.java
+│                           │   └── CartBean.java
+│                           └── util
+│                               ├── BookException.java
+│                               └── IdVerifier.java
+├── cart-web
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           ├── docker
+│           │   ├── Dockerfile.jvm
+│           │   ├── Dockerfile.legacy-jar
+│           │   ├── Dockerfile.native
+│           │   └── Dockerfile.native-micro
+│           ├── java
+│           │   └── quarkus
+│           │       └── tutorial
+│           │           └── cart
+│           │               └── CartResource.java
+│           └── resources
+│               └── application.properties
+├── pom.xml
+└── smoke.py
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/business_domain/cart/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── cart-ejb
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           └── java
+│               └── spring
+│                   └── examples
+│                       └── tutorial
+│                           └── cart
+│                               ├── service
+│                               │   ├── Cart.java
+│                               │   └── CartServiceImpl.java
+│                               └── util
+│                                   ├── BookException.java
+│                                   └── IdVerifier.java
+├── cart-web
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           ├── java
+│           │   └── spring
+│           │       └── examples
+│           │           └── tutorial
+│           │               └── cart
+│           │                   ├── Application.java
+│           │                   └── CartController.java
+│           └── resources
+│               └── application.properties
+├── pom.xml
+└── smoke.py
+```

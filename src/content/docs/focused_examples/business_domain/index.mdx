@@ -1,0 +1,36 @@
+---
+title: "Business Domain"
+---
+
+import { CardGrid } from '@astrojs/starlight/components';
+
+Core business logic implementations using Enterprise JavaBeans (EJBs). These examples demonstrate stateful, stateless, and singleton session beans for common enterprise patterns.
+
+<style>{`
+  .sb-grid-card-item {
+    display: block;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--sl-color-gray-4);
+    border-left: 1px solid var(--sl-color-gray-4);
+    border-radius: 10px;
+    background: var(--sl-color-gray-6);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.32);
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .sb-grid-card-item strong {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+`}</style>
+
+## Examples
+
+<CardGrid>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/cart/"><strong>cart</strong>Stateful session bean with shopping cart lifecycle management and `@Remove` methods.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/converter/"><strong>converter</strong>Stateless session bean demonstrating currency conversion business logic.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/counter/"><strong>counter</strong>Singleton session bean with shared state for tracking web page hits.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/helloservice/"><strong>helloservice</strong>JAX-WS web service implemented as a stateless session bean.</a>
+  <a class="sb-grid-card-item" href="/site/focused_examples/business_domain/standalone/"><strong>standalone</strong>Stateless session bean for standalone EJB container usage.</a>
+</CardGrid>

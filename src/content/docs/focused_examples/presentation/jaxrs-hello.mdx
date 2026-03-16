@@ -1,0 +1,80 @@
+---
+title: "JAX-RS Hello"
+---
+
+Simple JAX-RS resource with `@GET` and `@POST` methods.
+
+## Project Structure
+
+```
+jaxrs-hello/
+└── jaxrs-hello.feature
+```
+
+### Jakarta EE
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-hello/jakarta"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+jakarta/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        ├── java
+        │   └── jakarta
+        │       └── tutorial
+        │           └── hello
+        │               ├── HelloApplication.java
+        │               └── HelloWorld.java
+        └── liberty
+            └── config
+                └── server.xml
+```
+
+### Quarkus
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-hello/quarkus"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+quarkus/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        └── java
+            └── quarkus
+                └── tutorial
+                    └── hello
+                        └── HelloWorld.java
+```
+
+### Spring
+
+<a href="https://github.com/scarfbench/benchmark/tree/main/benchmark/presentation/jaxrs-hello/spring"><i class="fa-brands fa-github" aria-hidden="true"></i> Browse on GitHub</a>
+
+<br/>
+
+```
+spring/
+├── Dockerfile
+├── Makefile
+├── pom.xml
+├── smoke.py
+└── src
+    └── main
+        └── java
+            └── spring
+                └── tutorial
+                    └── hello
+                        ├── HelloApplication.java
+                        └── HelloWorld.java
+```
