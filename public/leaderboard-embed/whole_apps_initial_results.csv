@@ -1,40 +1,40 @@
 solution,org,date,status,link,layer,from,to,compile,run,translate
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,jakarta,quarkus,12,7,3
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,jakarta,spring,28,12,6
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,quarkus,jakarta,5,2,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,quarkus,spring,17,9,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,spring,jakarta,34,15,5
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,business domain,spring,quarkus,3,1,2
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,jakarta,quarkus,22,10,4
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,jakarta,spring,7,3,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,quarkus,jakarta,40,18,7
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,quarkus,spring,1,0,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,spring,jakarta,26,11,2
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,dependency injection,spring,quarkus,9,5,3
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,jakarta,quarkus,31,14,6
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,jakarta,spring,14,6,2
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,quarkus,jakarta,2,1,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,quarkus,spring,18,8,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,spring,jakarta,45,19,7
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,infrastructure,spring,quarkus,11,4,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,jakarta,quarkus,6,3,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,jakarta,spring,29,13,5
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,quarkus,jakarta,0,0,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,quarkus,spring,21,10,2
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,spring,jakarta,16,7,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,persistence,spring,quarkus,39,20,7
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,jakarta,quarkus,4,2,0
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,jakarta,spring,27,11,3
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,quarkus,jakarta,33,16,6
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,quarkus,spring,8,3,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,spring,jakarta,20,9,2
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,presentation,spring,quarkus,15,6,1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,jakarta,quarkus,0.6,0.4,0.1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,jakarta,spring,0.6,0.4,0.1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,quarkus,jakarta,0.6,0.4,0.1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,quarkus,spring,0.6,0.4,0.1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,spring,jakarta,0.6,0.4,0.1
-Claude Code (claude-sonnet-4.5),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-sonnet-4-5,whole app,spring,quarkus,0.6,0.4,0.1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,jakarta,quarkus,12,7,3
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,jakarta,spring,28,12,6
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,quarkus,jakarta,5,2,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,quarkus,spring,17,9,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,spring,jakarta,34,15,5
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,business domain,spring,quarkus,3,1,2
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,jakarta,quarkus,22,10,4
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,jakarta,spring,7,3,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,quarkus,jakarta,40,18,7
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,quarkus,spring,1,0,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,spring,jakarta,26,11,2
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,dependency injection,spring,quarkus,9,5,3
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,jakarta,quarkus,31,14,6
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,jakarta,spring,14,6,2
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,quarkus,jakarta,2,1,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,quarkus,spring,18,8,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,spring,jakarta,45,19,7
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,infrastructure,spring,quarkus,11,4,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,jakarta,quarkus,6,3,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,jakarta,spring,29,13,5
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,quarkus,jakarta,0,0,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,quarkus,spring,21,10,2
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,spring,jakarta,16,7,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,persistence,spring,quarkus,39,20,7
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,jakarta,quarkus,4,2,0
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,jakarta,spring,27,11,3
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,quarkus,jakarta,33,16,6
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,quarkus,spring,8,3,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,spring,jakarta,20,9,2
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,presentation,spring,quarkus,15,6,1
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,jakarta,quarkus,0.73,0.33,0.00
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,jakarta,spring,0.73,0.27,0.00
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,quarkus,jakarta,0.40,0.00,0.00
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,quarkus,spring,1.00,0.47,0.07
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,spring,jakarta,0.20,0.00,0.00
+Claude Code (claude-opus-4.6),Anthropic,02/27/26,Computed,https://www.anthropic.com/news/claude-opus-4-6,whole app,spring,quarkus,0.27,0.27,0.00
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,business domain,jakarta,quarkus,6.7,0.0,0.0
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,business domain,jakarta,spring,0.0,0.0,0.0
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,business domain,quarkus,jakarta,0.0,0.0,0.0
@@ -65,12 +65,12 @@ Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,presentation
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,presentation,quarkus,spring,0.0,0.0,0.0
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,presentation,spring,jakarta,0.0,0.0,0.0
 Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,presentation,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,jakarta,quarkus,0.9,0.8,0.3
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,jakarta,spring,0.9,0.8,0.3
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,quarkus,jakarta,0.9,0.8,0.3
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,quarkus,spring,0.9,0.8,0.3
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,spring,jakarta,0.9,0.8,0.3
-Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,spring,quarkus,0.9,0.8,0.3
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,jakarta,quarkus,0.80,0.53,0.00
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,jakarta,spring,0.73,0.27,0.00
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,quarkus,jakarta,0.20,0.00,0.00
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,quarkus,spring,0.80,0.33,0.07
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,spring,jakarta,0.40,0.00,0.00
+Codex (gpt-5.3-codex), 02/27/26, Computed,https://openai.com/gpt-5/,whole app,spring,quarkus,0.00,0.00,0.00
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,jakarta,quarkus,10,5,2
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,jakarta,spring,24,12,4
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,quarkus,jakarta,3,1,0
@@ -101,12 +101,12 @@ Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.go
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,presentation,quarkus,spring,4,1,0
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,presentation,spring,jakarta,25,11,4
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,presentation,spring,quarkus,8,3,1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,jakarta,quarkus,0.7,0.5,0.1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,jakarta,spring,0.7,0.5,0.1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,quarkus,jakarta,0.7,0.5,0.1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,quarkus,spring,0.7,0.5,0.1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,spring,jakarta,0.7,0.5,0.1
-Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,spring,quarkus,0.7,0.5,0.1
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,jakarta,quarkus,0.60,0.20,0.00
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,jakarta,spring,0.60,0.20,0.00
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,quarkus,jakarta,0.33,0.00,0.00
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,quarkus,spring,0.87,0.27,0.07
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,spring,jakarta,0.20,0.00,0.00
+Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,Computed,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,whole app,spring,quarkus,0.33,0.33,0.00
 Qwen-cli (qwen3-coder-480b),Alibaba,02/27/26,Computed,https://huggingface.co/Qwen/Qwen-cli (qwen3-coder-480b)-A35B-Instruct,business domain,jakarta,quarkus,0.0,0.0,0.0
 Qwen-cli (qwen3-coder-480b),Alibaba,02/27/26,Computed,https://huggingface.co/Qwen/Qwen-cli (qwen3-coder-480b)-A35B-Instruct,business domain,jakarta,spring,0.0,0.0,0.0
 Qwen-cli (qwen3-coder-480b),Alibaba,02/27/26,Computed,https://huggingface.co/Qwen/Qwen-cli (qwen3-coder-480b)-A35B-Instruct,business domain,quarkus,jakarta,0.0,0.0,0.0
