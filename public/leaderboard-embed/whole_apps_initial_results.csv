@@ -35,42 +35,42 @@ Claude Code (claude-opus-4.6),Anthropic,02/27/26,https://www.anthropic.com/news/
 Claude Code (claude-opus-4.6),Anthropic,02/27/26,https://www.anthropic.com/news/claude-opus-4-6,whole app,quarkus,spring,1.00,0.47,0.07
 Claude Code (claude-opus-4.6),Anthropic,02/27/26,https://www.anthropic.com/news/claude-opus-4-6,whole app,spring,jakarta,0.20,0.00,0.00
 Claude Code (claude-opus-4.6),Anthropic,02/27/26,https://www.anthropic.com/news/claude-opus-4-6,whole app,spring,quarkus,0.27,0.27,0.00
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,jakarta,quarkus,6.7,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,jakarta,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,quarkus,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,quarkus,spring,6.7,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,spring,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,business domain,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,jakarta,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,jakarta,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,quarkus,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,quarkus,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,spring,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,dependency injection,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,jakarta,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,jakarta,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,quarkus,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,quarkus,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,spring,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,infrastructure,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,jakarta,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,jakarta,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,quarkus,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,quarkus,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,spring,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,persistence,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,jakarta,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,jakarta,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,quarkus,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,quarkus,spring,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,spring,jakarta,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,presentation,spring,quarkus,0.0,0.0,0.0
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,jakarta,quarkus,0.80,0.53,0.00
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,jakarta,spring,0.73,0.27,0.00
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,quarkus,jakarta,0.20,0.00,0.00
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,quarkus,spring,0.80,0.33,0.07
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,spring,jakarta,0.40,0.00,0.00
-Codex (gpt-5.3-codex),OpenAI,02/27/26,whole app,spring,quarkus,0.00,0.00,0.00
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,jakarta,quarkus,6.7,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,jakarta,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,quarkus,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,quarkus,spring,6.7,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,spring,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,business domain,spring,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,jakarta,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,jakarta,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,quarkus,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,quarkus,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,spring,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,dependency injection,spring,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,jakarta,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,jakarta,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,quarkus,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,quarkus,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,spring,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,infrastructure,spring,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,jakarta,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,jakarta,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,quarkus,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,quarkus,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,spring,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,persistence,spring,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,jakarta,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,jakarta,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,quarkus,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,quarkus,spring,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,spring,jakarta,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,presentation,spring,quarkus,0.0,0.0,0.0
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,jakarta,quarkus,0.80,0.53,0.00
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,jakarta,spring,0.73,0.27,0.00
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,quarkus,jakarta,0.20,0.00,0.00
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,quarkus,spring,0.80,0.33,0.07
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,spring,jakarta,0.40,0.00,0.00
+Codex (gpt-5.3-codex),OpenAI,02/27/26,https://openai.com/codex,whole app,spring,quarkus,0.00,0.00,0.00
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,jakarta,quarkus,10,5,2
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,jakarta,spring,24,12,4
 Gemini-cli (gemini-2.5-pro),Google DeepMind,02/27/26,https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-2-5-Pro-Model-Card.pdf,business domain,quarkus,jakarta,3,1,0
