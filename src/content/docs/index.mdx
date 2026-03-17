@@ -6,7 +6,7 @@ tableOfContents: false
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 
 <div class="sb-logo">
-  <img id="sb-theme-logo" src="/site/assets/images/scarf-dark.png" alt="ScarfBench" />
+  <img id="sb-theme-logo" src="/assets/images/scarf-dark.png" alt="ScarfBench" />
 </div>
 
 <script is:inline>{`
@@ -19,8 +19,8 @@ import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
       logo.setAttribute(
         'src',
         theme === 'light'
-          ? '/site/assets/images/scarf-light.png'
-          : '/site/assets/images/scarf-dark.png'
+          ? '/assets/images/scarf-light.png'
+          : '/assets/images/scarf-dark.png'
       );
     };
 
@@ -142,22 +142,22 @@ The benchmark includes comprehensive examples ranging from focused layer-specifi
 ## Getting Started with the Benchmark
 
 <CardGrid>
-  <a class="sb-grid-card-item" href="/site/quickstart/">
+  <a class="sb-grid-card-item" href="/quickstart/">
     <strong><i class="fa-solid fa-rocket" aria-hidden="true" style="margin-right: 0.4rem;"></i>Quickstart</strong>
         A quick walkthrough to get you started with ScarfBench, including how to set up the environment and run your first benchmark evaluation.
   </a>
     
-  <a class="sb-grid-card-item" href="/site/installing/">
+  <a class="sb-grid-card-item" href="/installing/">
     <strong><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true" style="margin-right: 0.4rem;"></i>Installing ScarfBench</strong>
     Step-by-step instructions for installing ScarfBench on your local machine, including system requirements and troubleshooting tips.
   </a>
     
-  <a class="sb-grid-card-item" href="/site/leaderboard/">
+  <a class="sb-grid-card-item" href="/leaderboard/">
   <strong><i class="fa-solid fa-trophy" aria-hidden="true" style="margin-right: 0.4rem;"></i>Leaderboard</strong>
     Explore the current leaderboard to see how different solutions are performing on the ScarfBench benchmark, and compare results across various metrics and frameworks.
   </a>
 
-  <a class="sb-grid-card-item" href="/site/submit/">
+  <a class="sb-grid-card-item" href="/submit/">
     <strong><i class="fa-solid fa-paper-plane" aria-hidden="true" style="margin-right: 0.4rem;"></i>Submit Solutions</strong>
     Submit your agentic transformation solutions to the ScarfBench benchmark and contribute to the community by sharing your results and insights with other researchers and practitioners.
   </a>

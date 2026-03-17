@@ -3,8 +3,7 @@ import starlight from "@astrojs/starlight";
 
 const isProd = process.env.NODE_ENV === "production";
 export default defineConfig({
-  site: "https://scarfbench.github.io",
-  base: "/site/",
+  site: "https://scarfbench.info",
   integrations: [
     starlight({
       title: "ScarfBench",

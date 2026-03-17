@@ -23,7 +23,7 @@ const sidebar = (sublist ?? Astro.locals.starlightRoute.sidebar) as SidebarEntry
 
 const iconClassForEntry = (entry: SidebarEntry): string | undefined => {
   const href = entry.href ?? "";
-  if (href === "/site/" || href.endsWith("/site")) return "fa-solid fa-house";
+  if (href === "/") return "fa-solid fa-house";
   if (href.includes("/quickstart/")) return "fa-solid fa-rocket";
   if (href.includes("/installing/")) return "fa-solid fa-screwdriver-wrench";
   if (href.includes("/leaderboard/")) return "fa-solid fa-trophy";
@@ -59,9 +59,9 @@ const iconClassForGroup = (entry: SidebarEntry): string | undefined => {
 
 const hrefForGroup = (entry: SidebarEntry): string | undefined => {
   if (entry.type !== "group") return undefined;
-  if (entry.label === "Benchmark") return "/site/benchmark/";
-  if (entry.label === "Focused Examples") return "/site/focused_examples/";
-  if (entry.label === "Whole Applications") return "/site/whole_applications/";
+  if (entry.label === "Benchmark") return "/benchmark/";
+  if (entry.label === "Focused Examples") return "/focused_examples/";
+  if (entry.label === "Whole Applications") return "/whole_applications/";
   return undefined;
 };
 
