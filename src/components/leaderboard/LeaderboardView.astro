@@ -1,0 +1,578 @@
+---
+import LeaderboardHeader from "./LeaderboardHeader.astro";
+import LeaderboardTable from "./LeaderboardTable.astro";
+import { buildScoreCube, rankOverallRows } from "./data";
+import type { Solution, Layer, RawResult } from "./data";
+import fs from "node:fs";
+import path from "node:path";
+
+// Read the leaderboard index
+const indexPath = path.join(process.cwd(), "public", "leaderboard.json");
+const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+const LAYERS: Layer[] = index.layers;
+
+// Read each solution file
+const solutionDataList = index.solutions.map((filename: string) => {
+    const filePath = path.join(process.cwd(), "public", "results", filename);
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+});
+
+const SOLUTIONS: Solution[] = solutionDataList.map((sd: any) => sd.solution);
+const solutionResults: RawResult[][] = solutionDataList.map((sd: any) => sd.results);
+
+// Build initial view (from=all, to=all) and rank
+const scoreCube = buildScoreCube(solutionResults, LAYERS, "all", "all");
+const overallRows = rankOverallRows(scoreCube, LAYERS);
+const uniqueDates = [...new Set(SOLUTIONS.map((s) => s.date))];
+
+// Payload for client — raw results so it can re-aggregate when filters change
+const payload = JSON.stringify({
+    solutions: SOLUTIONS,
+    layers: LAYERS,
+    solutionResults,
+});
+---
+
+<style>
+    .leaderboard-root {
+        --lb-bg: #1e1f22;
+        --lb-surface: #232529;
+        --lb-surface-soft: #282b2f;
+        --lb-border: #353942;
+        --lb-border-soft: #2e3138;
+        --lb-text: #ededee;
+        --lb-text-muted: #b8bbc1;
+        --lb-pill-bg: #284778;
+        --lb-pill-text: #8eb3ff;
+        --lb-blue-row: #304b78;
+        --lb-blue-accent: #6f98e8;
+        --lb-green: #4aaf88;
+        --lb-orange: #c38730;
+        --lb-red: #e19797;
+        --lb-step--1: clamp(0.67rem, 0.66rem + 0.03vw, 0.72rem);
+        --lb-step-0: clamp(0.76rem, 0.74rem + 0.06vw, 0.84rem);
+        --lb-step-1: clamp(0.84rem, 0.8rem + 0.12vw, 0.96rem);
+        --lb-step-2: clamp(0.97rem, 0.91rem + 0.28vw, 1.18rem);
+        --lb-step-3: clamp(1.28rem, 1.16rem + 0.56vw, 1.7rem);
+        box-sizing: border-box;
+        width: min(100%, 72rem);
+        margin-inline: auto;
+        padding: clamp(0.7rem, 1.2vw, 1rem);
+        border-radius: 1rem;
+        border: 1px solid var(--lb-border);
+        background: linear-gradient(180deg, #25272b 0%, #1d1e21 80%);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+        font-family: var(--sl-font-system);
+        font-size: var(--lb-step-0);
+        color: var(--lb-text);
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.62rem 0.84rem;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid var(--lb-border);
+        border-radius: 0.95rem;
+        background: #232529;
+        margin-bottom: 0.55rem;
+    }
+
+    .section-header:hover {
+        background: #282b30;
+    }
+
+    .section-label {
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        font-size: var(--lb-step-2);
+        flex: 1;
+    }
+
+    .section-badge {
+        font-size: var(--lb-step-1);
+        font-weight: 700;
+        padding: 0.24rem 0.72rem;
+        border-radius: 999px;
+        background: var(--lb-pill-bg);
+        color: var(--lb-pill-text);
+    }
+
+    .chevron {
+        font-size: var(--lb-step-1);
+        color: var(--lb-text-muted);
+        transition: transform 0.15s ease;
+    }
+
+    .chevron.open {
+        transform: rotate(90deg);
+    }
+
+    .leaderboard-root :global(.table-wrap) {
+        border: 1px solid var(--lb-border);
+        border-radius: 0.95rem;
+        overflow: hidden;
+    }
+
+    .leaderboard-root :global(table) {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+        font-size: var(--lb-step-0);
+    }
+
+    .leaderboard-root :global(thead th) {
+        text-align: left;
+        padding: 0.76rem 0.86rem;
+        font-weight: 700;
+        color: var(--lb-text-muted);
+        font-size: var(--lb-step-1);
+        border-bottom: 1px solid var(--lb-border);
+        background: #24262a;
+    }
+
+    .leaderboard-root :global(thead th.num) {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(tbody tr) {
+        cursor: pointer;
+        border-bottom: 1px solid var(--lb-border-soft);
+    }
+
+    .leaderboard-root :global(tbody tr:hover td) {
+        background: #2a2d33;
+    }
+
+    .leaderboard-root :global(tbody tr.selected td) {
+        background: var(--lb-blue-row);
+    }
+
+    .leaderboard-root :global(td) {
+        padding: 0.7rem 0.86rem;
+        vertical-align: middle;
+    }
+
+    .leaderboard-root :global(td.num) {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(th:first-child),
+    .leaderboard-root :global(td:first-child),
+    .leaderboard-root :global(th:last-child),
+    .leaderboard-root :global(td:last-child) {
+        width: 1%;
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(.rank) {
+        color: #88acec;
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.solution-name) {
+        font-size: var(--lb-step-2);
+        font-weight: 800;
+    }
+
+    .leaderboard-root :global(.solution-model-line),
+    .leaderboard-root :global(.solution-date) {
+        color: var(--lb-text-muted);
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(.solution-model-line) {
+        margin-top: 0.15rem;
+        font-size: var(--lb-step-0);
+    }
+
+    .leaderboard-root :global(.submission-link) {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--lb-pill-text);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .leaderboard-root :global(.submission-link:hover) {
+        text-decoration: underline;
+    }
+
+    .leaderboard-root :global(.submission-cell) {
+        text-align: center;
+    }
+
+    .leaderboard-root :global(.solution-meta) {
+        color: #d5d7dd;
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.val-high) {
+        color: var(--lb-green);
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.val-mid) {
+        color: var(--lb-orange);
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.val-low) {
+        color: #d2d4d8;
+    }
+
+    .leaderboard-root :global(.nan) {
+        color: var(--lb-red);
+        font-style: italic;
+    }
+
+    .leaderboard-root :global(.drill-row td) {
+        padding: 0;
+        border-top: 1px solid var(--lb-border);
+        background: linear-gradient(90deg, #2b2d31 0%, #26282c 100%) !important;
+        cursor: default;
+    }
+
+    .leaderboard-root :global(.drill-row:hover td) {
+        background: linear-gradient(90deg, #2b2d31 0%, #26282c 100%) !important;
+    }
+
+    .leaderboard-root :global(.drill-panel) {
+        padding: 0.82rem 0.92rem 0.98rem;
+        border-left: 4px solid var(--lb-blue-accent);
+    }
+
+    .leaderboard-root :global(.drill-title) {
+        font-size: var(--lb-step-1);
+        font-weight: 700;
+        color: #c5c8ce;
+        margin-bottom: 0.62rem;
+        text-transform: uppercase;
+        letter-spacing: 0.035em;
+    }
+
+    .leaderboard-root :global(.drill-panel .table-wrap) {
+        width: 100%;
+        border: 1px solid var(--lb-border-soft);
+        border-radius: 0.8rem;
+        overflow: hidden;
+        background: #222427;
+        box-sizing: border-box;
+    }
+
+    .leaderboard-root :global(.drill-panel table) {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: var(--lb-step-0);
+        box-sizing: border-box;
+    }
+
+    .leaderboard-root :global(.drill-panel col.layer-col) {
+        width: 25%;
+    }
+
+    .leaderboard-root :global(.drill-panel col.compile-col) {
+        width: 25%;
+    }
+
+    .leaderboard-root :global(.drill-panel col.deploy-col) {
+        width: 25%;
+    }
+
+    .leaderboard-root :global(.drill-panel col.test-col) {
+        width: 25%;
+    }
+
+    .leaderboard-root :global(.drill-panel th) {
+        text-align: left;
+        padding: 0.64rem 0.8rem;
+        font-weight: 700;
+        color: var(--lb-text-muted);
+        border-bottom: 1px solid var(--lb-border-soft);
+        background: #26292d;
+    }
+
+    .leaderboard-root :global(.drill-panel th.num),
+    .leaderboard-root :global(.drill-panel td.num) {
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .leaderboard-root :global(.drill-panel td) {
+        padding: 0.62rem 0.7rem;
+        border-bottom: 1px solid var(--lb-border-soft);
+        vertical-align: middle;
+    }
+
+    .leaderboard-root :global(.drill-panel td:first-child),
+    .leaderboard-root :global(.drill-panel th:first-child) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(.drill-panel td.metric-cell) {
+        text-align: left;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+
+    .leaderboard-root :global(.drill-panel .metric-bar-wrap) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 1.5rem;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .leaderboard-root :global(.drill-panel .metric-bar-wrap::before) {
+        content: "";
+        grid-column: 1;
+        grid-row: 1;
+        height: 0.9rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .leaderboard-root :global(.drill-panel .metric-bar) {
+        grid-column: 1;
+        grid-row: 1;
+        height: 0.9rem;
+        border-radius: 999px;
+        background: rgba(143, 180, 239, 0.32);
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .leaderboard-root :global(.drill-panel .metric-label) {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+        color: var(--lb-text);
+        min-width: 2.75rem;
+        text-align: right;
+    }
+
+    .leaderboard-root :global(.drill-panel tbody tr:last-child td) {
+        border-bottom: 0;
+    }
+
+    .leaderboard-root :global(.layer-drill-row) {
+        cursor: pointer;
+    }
+
+    .leaderboard-root :global(.layer-drill-row:hover td) {
+        background: #2a2d33;
+    }
+
+    .leaderboard-root :global(.layer-drill-row.layer-expanded td) {
+        background: #282b30;
+        border-bottom-color: var(--lb-border);
+    }
+
+    .leaderboard-root :global(.layer-chevron) {
+        display: inline-block;
+        font-size: var(--lb-step--1);
+        color: var(--lb-text-muted);
+        transition: transform 0.15s ease;
+        width: 0.9em;
+        text-align: center;
+    }
+
+    .leaderboard-root :global(.app-detail-row td) {
+        background: #1e2024;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
+        border-bottom: 1px solid #2a2d31;
+    }
+
+    .leaderboard-root :global(.app-detail-row:last-child td),
+    .leaderboard-root :global(.app-detail-row + .layer-drill-row td),
+    .leaderboard-root :global(.app-detail-row + tr:not(.app-detail-row) td) {
+        border-top: 1px solid var(--lb-border);
+    }
+
+    .leaderboard-root :global(.app-name-cell) {
+        font-size: var(--lb-step--1);
+        color: var(--lb-text-muted);
+        padding-left: 1.4rem !important;
+    }
+
+    .leaderboard-root :global(.app-metric-cell) {
+        text-align: center !important;
+        font-size: var(--lb-step-1);
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(.app-metric-pass) {
+        color: var(--lb-green);
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.app-metric-partial) {
+        color: var(--lb-orange);
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.app-metric-fail) {
+        color: #e19797;
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.app-metric-nan) {
+        color: var(--lb-text-muted);
+    }
+
+    .leaderboard-root :global(.app-metric-frac) {
+        font-size: var(--lb-step--1);
+        color: var(--lb-text-muted);
+        margin-left: 0.25rem;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .leaderboard-root :global(.lb-page-header) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.8rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .leaderboard-root :global(.lb-page-title) {
+        font-size: var(--lb-step-3);
+        font-weight: 800;
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .leaderboard-root :global(.lb-page-subtitle) {
+        font-size: var(--lb-step-2);
+        color: var(--lb-text-muted);
+        margin-top: 0.22rem;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .leaderboard-root :global(.lb-filter-row) {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        justify-content: flex-end;
+        margin-left: auto;
+        flex-wrap: wrap;
+    }
+
+    .leaderboard-root :global(.lb-select) {
+        appearance: none;
+        font-size: var(--lb-step-1);
+        min-width: clamp(7.8rem, 17vw, 10.8rem);
+        height: 2.4rem;
+        box-sizing: border-box;
+        line-height: 2.4rem;
+        white-space: nowrap;
+        border-radius: 0.85rem;
+        border: 1px solid #3c4048;
+        background-color: #2a2d31;
+        color: var(--lb-text);
+        font-weight: 600;
+        padding: 0 2rem 0 0.78rem;
+        vertical-align: middle;
+        display: inline-block;
+        background-image: linear-gradient(45deg, transparent 50%, #a9adb5 50%), linear-gradient(135deg, #a9adb5 50%, transparent 50%);
+        background-position:
+            calc(100% - 0.86rem) calc(50% - 0.13rem),
+            calc(100% - 0.58rem) calc(50% - 0.13rem);
+        background-size:
+            0.3rem 0.3rem,
+            0.3rem 0.3rem;
+        background-repeat: no-repeat;
+    }
+
+    .leaderboard-root :global(.conversion-filters) {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-bottom: 0.65rem;
+        padding: 0.55rem 0.84rem;
+        border: 1px solid var(--lb-border-soft);
+        border-radius: 0.85rem;
+        background: #26282c;
+    }
+
+    .leaderboard-root :global(.lb-filter-pair) {
+        display: flex;
+        align-items: baseline;
+        gap: 0.45rem;
+    }
+
+    .leaderboard-root :global(.lb-filter-label) {
+        font-size: var(--lb-step-0);
+        font-weight: 700;
+        color: var(--lb-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+    }
+
+    .leaderboard-root :global(.lb-filter-sep) {
+        color: transparent;
+        font-size: var(--lb-step-0);
+        user-select: none;
+        line-height: 2.4rem;
+    }
+
+    @media (max-width: 52rem) {
+        .leaderboard-root {
+            border-radius: 0.8rem;
+            padding: 0.75rem;
+        }
+
+        .leaderboard-root :global(.lb-filter-row) {
+            width: 100%;
+            margin-left: 0;
+            justify-content: flex-start;
+            padding-top: 0;
+        }
+
+        .leaderboard-root :global(td),
+        .leaderboard-root :global(thead th) {
+            padding: 0.72rem 0.62rem;
+        }
+
+        .leaderboard-root :global(.solution-model-line),
+        .leaderboard-root :global(.solution-date) {
+            white-space: normal;
+        }
+    }
+</style>
+
+<div class="leaderboard-root">
+    <LeaderboardHeader dates={uniqueDates} />
+
+    <script type="application/json" id="leaderboard-data" set:html={payload} />
+    <script>
+        import { initLeaderboard } from "./leaderboard-client";
+        initLeaderboard();
+    </script>
+    <div id="section-overall">
+        <LeaderboardTable tableId="overall-body" rows={overallRows} solutions={SOLUTIONS} layerIdx={-1} />
+    </div>
+</div>

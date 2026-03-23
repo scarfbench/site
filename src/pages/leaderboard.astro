@@ -1,0 +1,31 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import LeaderboardView from "../components/leaderboard/LeaderboardView.astro";
+
+const frontmatter = {
+    title: "",
+    tableOfContents: true,
+};
+---
+
+<StarlightPage frontmatter={frontmatter}>
+    <style>
+        :global(body:has(.sb-leaderboard-page) .content-panel .sl-container) {
+            max-width: 100%;
+        }
+
+        :global(body:has(.sb-leaderboard-page) .content-panel) {
+            padding-inline: clamp(0.5rem, 1.8vw, 1.5rem);
+        }
+
+        .sb-leaderboard-page {
+            width: min(100%, 92rem);
+            padding: clamp(0.4rem, 1vw, 1rem) 0;
+            margin: 0 auto;
+        }
+    </style>
+
+    <div class="sb-leaderboard-page">
+        <LeaderboardView />
+    </div>
+</StarlightPage>

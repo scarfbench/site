@@ -1,0 +1,62 @@
+---
+import { formatMetric, metricClass, type RankedRow, type Solution } from "./data";
+
+interface Props {
+    tableId: string;
+    rows: RankedRow[];
+    solutions: Solution[];
+    layerIdx: number;
+}
+
+const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
+---
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Tool / Model</th>
+                <th>Date</th>
+                <th class="num">Avg. Compile %</th>
+                <th class="num">Avg. Deploy %</th>
+                <th class="num">Avg. Test Pass %</th>
+                <th class="submission-cell">Submission</th>
+            </tr>
+        </thead>
+        <tbody id={tableId}>
+            {
+                rows.map((row, rowIdx) => {
+                    const solution = solutions[row.solutionIdx];
+                    return (
+                        <tr
+                            class="data-row"
+                            data-row-clickable="true"
+                            data-table-id={tableId}
+                            data-row-idx={String(rowIdx)}
+                            data-solution-idx={String(row.solutionIdx)}
+                            data-layer-idx={String(layerIdx)}
+                        >
+                            <td class="rank num">#{row.rank}</td>
+                            <td>
+                                <strong class="solution-name">{solution.name}</strong>
+                                <div class="solution-model-line">
+                                    <em>({solution.model})</em>
+                                </div>
+                            </td>
+                            <td class="solution-date">{solution.date}</td>
+                            <td class:list={["num", metricClass(row.compile, 0)]}>{formatMetric(row.compile)}</td>
+                            <td class:list={["num", metricClass(row.run, 1)]}>{formatMetric(row.run)}</td>
+                            <td class:list={["num", metricClass(row.pass, 2)]}>{formatMetric(row.pass)}</td>
+                            <td class="submission-cell">
+                                <a class="submission-link" href="#" aria-label="Submission URL">
+                                    <i class="fa-solid fa-link" aria-hidden="true" />
+                                </a>
+                            </td>
+                        </tr>
+                    );
+                })
+            }
+        </tbody>
+    </table>
+</div>

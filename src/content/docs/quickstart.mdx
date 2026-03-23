@@ -17,7 +17,7 @@ This guide will help walk you through the following two tasks:
 
 ### Pre-requisites
 
-For the purposes of this guide, we will assume that you have installed the `scarf` cli tool. If you haven't already, you can follow the instructions [here](/site/installing/) to install it. You can verify the installation by running `scarf --help`.
+For the purposes of this guide, we will assume that you have installed the `scarf` cli tool. If you haven't already, you can follow the instructions [here](/installing/) to install it. You can verify the installation by running `scarf --help`.
 
 ```text
 ScarfBench CLI: The command line helper tool for scarf bench
@@ -207,7 +207,7 @@ Options:
   -h, --help                          Print help
 ```
 
-You can call this command with the appropriate arguments to run the evaluation. For example, assuming you pulled the benchmark directory to `~/path/to/benchmark`, and you wrote your agent directory at `~/site/agents/codex-migration-cli` (as per the previous section), and you want to evaluate the conversion from `spring` to `quarkus`, you could run:
+You can call this command with the appropriate arguments to run the evaluation. For example, assuming you pulled the benchmark directory to `~/path/to/benchmark`, and you wrote your agent directory at `~/agents/codex-migration-cli` (as per the previous section), and you want to evaluate the conversion from `spring` to `quarkus`, you could run:
 
 ```bash
 scarf eval run \
@@ -281,4 +281,3 @@ results of make test
     │   └── run.log         # <-- This file contains the results of the validation
     └── metadata.json   
 ```
-
