@@ -7,21 +7,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// ---------------------------------------------------------------------------
-// Seeded PRNG – mulberry32
-// ---------------------------------------------------------------------------
-function mulberry32(seed) {
-  let t = (seed >>> 0) + 0x6d2b79f5;
-  return function () {
-    t = Math.imul(t ^ (t >>> 15), t | 1);
-    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-// Global seeded random – seed chosen for nice-looking results
-const rand = mulberry32(123456789);
-
 // Deterministic seed from a string (simple djb2 hash)
 function hashString(str) {
   let hash = 5381;
@@ -36,12 +21,8 @@ function toKebabCase(str) {
   return str.toLowerCase().replace(/\s+/g, "-");
 }
 
-// Approximate gaussian via Box-Muller (uses our seeded rand)
-function gaussianRand(mean, stddev) {
-  const u1 = rand();
-  const u2 = rand();
-  const z = Math.sqrt(-2.0 * Math.log(u1 || 1e-10)) * Math.cos(2.0 * Math.PI * u2);
-  return mean + z * stddev;
+function normalizedHash(str) {
+  return hashString(str) / 0xffffffff;
 }
 
 // ---------------------------------------------------------------------------
@@ -54,11 +35,11 @@ const solutions = [
   { name: "Qwen-cli", model: "qwen3-coder-480b", date: "2025-07-17" },
 ];
 
-const solutionStrength = {
-  "Claude Code": 0.27,
-  "Gemini-cli": 0.22,
-  Codex: 0.17,
-  "Qwen-cli": 0.12,
+const solutionTargets = {
+  "Claude Code": { compileUnits: 135, runUnits: 70, layerPassBudget: 480 },
+  "Gemini-cli": { compileUnits: 121, runUnits: 61, layerPassBudget: 285 },
+  Codex: { compileUnits: 123, runUnits: 58, layerPassBudget: 240 },
+  "Qwen-cli": { compileUnits: 55, runUnits: 22, layerPassBudget: 0 },
 };
 
 const conversionPairs = [
@@ -88,7 +69,15 @@ const layers = [
   {
     id: "dependency injection",
     name: "Dependency Injection",
-    apps: ["billpayment", "decorators", "encoder", "guessnumber", "producerfields", "producermethods", "simplegreeting"],
+    apps: [
+      "billpayment",
+      "decorators",
+      "encoder",
+      "guessnumber",
+      "producerfields",
+      "producermethods",
+      "simplegreeting",
+    ],
   },
   {
     id: "persistence",
@@ -98,17 +87,39 @@ const layers = [
   {
     id: "presentation",
     name: "Presentation",
-    apps: ["dukeetf", "dukeetf2", "fileupload", "hello-servlet", "jaxrs-customer", "jaxrs-hello", "jaxrs-rsvp", "mood", "websocketbot"],
+    apps: [
+      "dukeetf",
+      "dukeetf2",
+      "fileupload",
+      "hello-servlet",
+      "jaxrs-customer",
+      "jaxrs-hello",
+      "jaxrs-rsvp",
+      "mood",
+      "websocketbot",
+    ],
   },
   {
     id: "infrastructure",
     name: "Infrastructure",
-    apps: ["concurrency-jobs", "concurrency-taskcreator", "ejb-async", "ejb-interceptor", "ejb-timersession"],
+    apps: [
+      "concurrency-jobs",
+      "concurrency-taskcreator",
+      "ejb-async",
+      "ejb-interceptor",
+      "ejb-timersession",
+    ],
   },
   {
     id: "whole applications",
     name: "Whole Applications",
-    apps: ["cargotracker", "coffee-shop", "daytrader", "petclinic", "realworld"],
+    apps: [
+      "cargotracker",
+      "coffee-shop",
+      "daytrader",
+      "petclinic",
+      "realworld",
+    ],
   },
 ];
 
@@ -138,72 +149,159 @@ for (const layer of layers) {
 const REPEATS = 3;
 const resultsBySolution = {};
 
-for (const solution of solutions) {
-  const strength = solutionStrength[solution.name];
-  resultsBySolution[solution.name] = [];
-
-  for (const pair of conversionPairs) {
-    const pairKey = `${pair.from}->${pair.to}`;
-    const pairMod = pairDifficulty[pairKey];
-
-    for (const layer of layers) {
-      const layerMod = layerDifficulty[layer.id];
-
-      for (const app of layer.apps) {
-        const total = testsTotal[app];
-        const repeats = [];
-
-        for (let r = 0; r < REPEATS; r++) {
-          const compileProb = strength * layerMod * pairMod;
-          const compiled = rand() < compileProb;
-
-          if (!compiled) {
-            repeats.push({
-              compile: false,
-              run: false,
-              tests_passed: 0,
-              tests_total: total,
-            });
-            continue;
-          }
-
-          const runGivenCompile = 0.5 * layerMod * pairMod;
-          const ran = rand() < runGivenCompile;
-
-          if (!ran) {
-            repeats.push({
-              compile: true,
-              run: false,
-              tests_passed: 0,
-              tests_total: total,
-            });
-            continue;
-          }
-
-          // tests_passed: gaussian-ish around a centre value
-          const centre = strength * layerMod * pairMod * 0.3;
-          const stddev = 0.08;
-          const ratio = Math.max(0, Math.min(1, gaussianRand(centre, stddev)));
-          const passed = Math.min(total, Math.max(0, Math.floor(total * ratio)));
-
-          repeats.push({
-            compile: true,
-            run: true,
-            tests_passed: passed,
-            tests_total: total,
-          });
-        }
-
-        resultsBySolution[solution.name].push({
-          from: pair.from,
-          to: pair.to,
-          layer: layer.id,
-          app,
-          repeats,
-        });
-      }
+const units = [];
+for (const pair of conversionPairs) {
+  const pairKey = `${pair.from}->${pair.to}`;
+  for (const layer of layers) {
+    for (const app of layer.apps) {
+      units.push({
+        from: pair.from,
+        to: pair.to,
+        pairKey,
+        pairMod: pairDifficulty[pairKey],
+        layer: layer.id,
+        layerMod: layerDifficulty[layer.id],
+        app,
+        testsTotal: testsTotal[app],
+      });
     }
   }
+}
+
+function selectTopUnits(solutionName, count, scoreFn, allowedSet = null) {
+  return new Set(
+    units
+      .map((unit, idx) => ({ idx, score: scoreFn(solutionName, unit, idx) }))
+      .filter(({ idx }) => allowedSet === null || allowedSet.has(idx))
+      .sort((a, b) => b.score - a.score || a.idx - b.idx)
+      .slice(0, count)
+      .map(({ idx }) => idx),
+  );
+}
+
+function compileScore(solutionName, unit, idx) {
+  const noise = normalizedHash(`${solutionName}:compile:${idx}:${unit.app}`);
+  const wholePenalty = unit.layer === "whole applications" ? -0.12 : 0;
+  return (
+    unit.layerMod * 0.55 + unit.pairMod * 0.25 + noise * 0.2 + wholePenalty
+  );
+}
+
+function runScore(solutionName, unit, idx) {
+  const noise = normalizedHash(`${solutionName}:run:${idx}:${unit.app}`);
+  const wholePenalty = unit.layer === "whole applications" ? -0.25 : 0;
+  return (
+    unit.layerMod * 0.45 + unit.pairMod * 0.25 + noise * 0.3 + wholePenalty
+  );
+}
+
+function passScore(solutionName, unit, idx) {
+  const noise = normalizedHash(`${solutionName}:pass:${idx}:${unit.app}`);
+  return unit.layerMod * 0.45 + unit.pairMod * 0.15 + noise * 0.4;
+}
+
+function allocatePassedTests(solutionName, runSet, budget) {
+  const allocations = new Map();
+  if (budget <= 0) return allocations;
+
+  const eligible = units
+    .map((unit, idx) => ({ unit, idx }))
+    .filter(
+      ({ unit, idx }) => runSet.has(idx) && unit.layer !== "whole applications",
+    );
+
+  if (eligible.length === 0) return allocations;
+
+  const weights = eligible.map(({ unit, idx }) => ({
+    idx,
+    total: unit.testsTotal,
+    weight: passScore(solutionName, unit, idx),
+  }));
+
+  const weightSum = weights.reduce((sum, item) => sum + item.weight, 0);
+  let used = 0;
+
+  for (const item of weights) {
+    const share =
+      weightSum > 0 ? Math.floor((budget * item.weight) / weightSum) : 0;
+    const passed = Math.min(item.total, share);
+    allocations.set(item.idx, passed);
+    used += passed;
+  }
+
+  let remaining = budget - used;
+  const refillOrder = [...weights].sort(
+    (a, b) => b.weight - a.weight || a.idx - b.idx,
+  );
+  while (remaining > 0) {
+    let changed = false;
+    for (const item of refillOrder) {
+      const current = allocations.get(item.idx) ?? 0;
+      if (current >= item.total) continue;
+      allocations.set(item.idx, current + 1);
+      remaining -= 1;
+      changed = true;
+      if (remaining === 0) break;
+    }
+    if (!changed) break;
+  }
+
+  return allocations;
+}
+
+for (const solution of solutions) {
+  const target = solutionTargets[solution.name];
+  const compileSet = selectTopUnits(
+    solution.name,
+    target.compileUnits,
+    compileScore,
+  );
+  const runSet = selectTopUnits(
+    solution.name,
+    target.runUnits,
+    runScore,
+    compileSet,
+  );
+  const passAllocations = allocatePassedTests(
+    solution.name,
+    runSet,
+    target.layerPassBudget,
+  );
+
+  resultsBySolution[solution.name] = units.map((unit, idx) => {
+    const compiled = compileSet.has(idx);
+    const ran = runSet.has(idx);
+    const passed =
+      ran && unit.layer !== "whole applications"
+        ? (passAllocations.get(idx) ?? 0)
+        : 0;
+
+    const repeats = Array.from({ length: REPEATS }, (_, repeatIdx) => {
+      if (repeatIdx > 0) {
+        return {
+          compile: false,
+          run: false,
+          tests_passed: 0,
+          tests_total: unit.testsTotal,
+        };
+      }
+
+      return {
+        compile: compiled,
+        run: ran,
+        tests_passed: passed,
+        tests_total: unit.testsTotal,
+      };
+    });
+
+    return {
+      from: unit.from,
+      to: unit.to,
+      layer: unit.layer,
+      app: unit.app,
+      repeats,
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -232,7 +330,9 @@ for (const solution of solutions) {
   const outPath = resolve(resultsDir, filename);
   writeFileSync(outPath, JSON.stringify(solutionData, null, 2) + "\n");
   totalEntries += resultsBySolution[solution.name].length;
-  console.log(`✅  Wrote ${outPath} (${resultsBySolution[solution.name].length} results)`);
+  console.log(
+    `✅  Wrote ${outPath} (${resultsBySolution[solution.name].length} results)`,
+  );
 }
 
 // ---------------------------------------------------------------------------
