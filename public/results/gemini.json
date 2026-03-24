@@ -41,19 +41,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -93,19 +93,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -460,12 +460,6 @@
           "tests_total": 10
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 10,
-          "tests_total": 10
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
@@ -475,18 +469,6 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 10,
           "tests_total": 10
         }
       ]
@@ -498,31 +480,13 @@
       "app": "order",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
           "compile": true,
           "run": true,
           "tests_passed": 4,
           "tests_total": 7
         },
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 7
@@ -542,12 +506,6 @@
       "app": "roster",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
           "compile": true,
           "run": true,
           "tests_passed": 2,
@@ -555,18 +513,6 @@
         },
         {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 25
@@ -667,19 +613,19 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -828,7 +774,7 @@
         {
           "compile": true,
           "run": true,
-          "tests_passed": 0,
+          "tests_passed": 4,
           "tests_total": 34
         },
         {
@@ -855,7 +801,7 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 9
         },
         {
           "compile": false,
@@ -875,7 +821,7 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 30
         },
         {
           "compile": false,
@@ -887,7 +833,7 @@
           "compile": true,
           "run": true,
           "tests_passed": 3,
-          "tests_total": 1
+          "tests_total": 30
         }
       ]
     },
@@ -901,13 +847,13 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 13
         },
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 13
         },
         {
           "compile": false,
@@ -939,7 +885,7 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 62
         }
       ]
     },
@@ -979,19 +925,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -1031,19 +977,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -1398,31 +1344,13 @@
           "tests_total": 10
         },
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
         },
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -1442,12 +1370,6 @@
           "tests_total": 11
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 5,
-          "tests_total": 11
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
@@ -1458,18 +1380,6 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 5,
-          "tests_total": 11
         }
       ]
     },
@@ -1479,24 +1389,6 @@
       "layer": "persistence",
       "app": "roster",
       "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
         {
           "compile": true,
           "run": false,
@@ -1605,19 +1497,19 @@
           "compile": true,
           "run": true,
           "tests_passed": 12,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 12,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 12,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -1760,7 +1652,7 @@
         {
           "compile": true,
           "run": true,
-          "tests_passed": 0,
+          "tests_passed": 3,
           "tests_total": 34
         },
         {
@@ -1772,7 +1664,7 @@
         {
           "compile": true,
           "run": true,
-          "tests_passed": 0,
+          "tests_passed": 3,
           "tests_total": 34
         }
       ]
@@ -1787,7 +1679,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 11
         },
         {
           "compile": false,
@@ -1839,7 +1731,7 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 13
         },
         {
           "compile": true,
@@ -1865,13 +1757,13 @@
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 62
         },
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 2
+          "tests_total": 62
         },
         {
           "compile": true,
@@ -1917,19 +1809,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -1969,19 +1861,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -2346,24 +2238,6 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
         }
       ]
     },
@@ -2390,24 +2264,6 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
         }
       ]
     },
@@ -2417,24 +2273,6 @@
       "layer": "persistence",
       "app": "roster",
       "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
         {
           "compile": false,
           "run": false,
@@ -2543,19 +2381,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -2757,13 +2595,13 @@
           "compile": true,
           "run": true,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 21
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 21
         }
       ]
     },
@@ -2783,7 +2621,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 36
         },
         {
           "compile": false,
@@ -2855,19 +2693,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -2907,19 +2745,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -3268,31 +3106,13 @@
       "app": "address-book",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": true,
           "run": true,
           "tests_passed": 7,
           "tests_total": 10
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -3312,31 +3132,13 @@
       "app": "order",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
           "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
           "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
@@ -3362,31 +3164,13 @@
           "tests_total": 24
         },
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 24
         },
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 24
@@ -3481,19 +3265,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -3636,8 +3420,8 @@
         {
           "compile": true,
           "run": true,
-          "tests_passed": 0,
-          "tests_total": 0
+          "tests_passed": 4,
+          "tests_total": 34
         },
         {
           "compile": true,
@@ -3715,7 +3499,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 13
         },
         {
           "compile": true,
@@ -3793,19 +3577,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -3845,19 +3629,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -4222,24 +4006,6 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
         }
       ]
     },
@@ -4266,24 +4032,6 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
         }
       ]
     },
@@ -4293,24 +4041,6 @@
       "layer": "persistence",
       "app": "roster",
       "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
         {
           "compile": false,
           "run": false,
@@ -4419,19 +4149,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -4575,13 +4305,13 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 34
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 34
         },
         {
           "compile": false,
@@ -4601,7 +4331,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 9
         },
         {
           "compile": false,
@@ -4653,19 +4383,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 36
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 3
+          "tests_total": 36
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 3
+          "tests_total": 36
         }
       ]
     },
@@ -4691,7 +4421,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 62
         }
       ]
     },
@@ -4731,19 +4461,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 21
         }
       ]
     },
@@ -4783,19 +4513,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 9
+          "tests_total": 17
         }
       ]
     },
@@ -5144,12 +4874,6 @@
       "app": "address-book",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": true,
           "run": true,
           "tests_passed": 10,
@@ -5157,18 +4881,6 @@
         },
         {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -5194,33 +4906,15 @@
           "tests_total": 7
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 4,
-          "tests_total": 7
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 7
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 4,
-          "tests_total": 7
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 4,
           "tests_total": 7
         }
       ]
@@ -5235,24 +4929,6 @@
           "compile": true,
           "run": true,
           "tests_passed": 2,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
           "tests_total": 25
         },
         {
@@ -5357,19 +5033,19 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 12
+          "tests_total": 15
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 12,
-          "tests_total": 12
+          "tests_total": 15
         }
       ]
     },
@@ -5513,7 +5189,7 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 34
         },
         {
           "compile": false,
@@ -5545,13 +5221,13 @@
           "compile": false,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 0
+          "tests_total": 9
         },
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 1
+          "tests_total": 9
         }
       ]
     },
