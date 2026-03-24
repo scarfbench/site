@@ -72,6 +72,12 @@ const payload = JSON.stringify({
         --lb-select-bg: #2a2d31;
         --lb-select-arrow: #a9adb5;
         --lb-filter-bg: #26282c;
+        --lb-group-pass1-bg: rgba(255, 255, 255, 0.025);
+        --lb-group-pass3-bg: rgba(255, 255, 255, 0.05);
+        --lb-group-divider: rgba(255, 255, 255, 0.1);
+        --lb-pass-focus-bg: rgba(255, 255, 255, 0.045);
+        --lb-drill-section-bg: rgba(255, 255, 255, 0.025);
+        --lb-drill-section-title-bg: rgba(255, 255, 255, 0.05);
         --lb-step--1: clamp(0.67rem, 0.66rem + 0.03vw, 0.72rem);
         --lb-step-0: clamp(0.76rem, 0.74rem + 0.06vw, 0.84rem);
         --lb-step-1: clamp(0.84rem, 0.8rem + 0.12vw, 0.96rem);
@@ -126,6 +132,12 @@ const payload = JSON.stringify({
         --lb-select-bg: #ffffff;
         --lb-select-arrow: #6b778a;
         --lb-filter-bg: #f5f8fc;
+        --lb-group-pass1-bg: rgba(23, 33, 51, 0.03);
+        --lb-group-pass3-bg: rgba(23, 33, 51, 0.06);
+        --lb-group-divider: rgba(23, 33, 51, 0.12);
+        --lb-pass-focus-bg: rgba(23, 33, 51, 0.05);
+        --lb-drill-section-bg: rgba(23, 33, 51, 0.025);
+        --lb-drill-section-title-bg: rgba(23, 33, 51, 0.06);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
@@ -205,6 +217,24 @@ const payload = JSON.stringify({
         color: var(--lb-text);
     }
 
+    .leaderboard-root :global(thead .group-head.group-pass1),
+    .leaderboard-root :global(thead th.group-pass1),
+    .leaderboard-root :global(td.group-pass1) {
+        background-color: var(--lb-group-pass1-bg);
+    }
+
+    .leaderboard-root :global(thead .group-head.group-pass3),
+    .leaderboard-root :global(thead th.group-pass3),
+    .leaderboard-root :global(td.group-pass3) {
+        background-color: var(--lb-group-pass3-bg);
+    }
+
+    .leaderboard-root :global(th.group-divider),
+    .leaderboard-root :global(td.group-divider),
+    .leaderboard-root :global(col.col-group-divider) {
+        border-left: 1px solid var(--lb-group-divider);
+    }
+
     .leaderboard-root :global(.sort-button) {
         appearance: none;
         border: 0;
@@ -222,6 +252,10 @@ const payload = JSON.stringify({
     .leaderboard-root :global(.sort-button.num) {
         justify-content: flex-end;
         width: 100%;
+    }
+
+    .leaderboard-root :global(.sort-button.metric-pass-sort) {
+        justify-content: center;
     }
 
     .leaderboard-root :global(.sort-button.active) {
@@ -272,6 +306,15 @@ const payload = JSON.stringify({
         text-align: right;
         font-variant-numeric: tabular-nums;
         white-space: nowrap;
+    }
+
+    .leaderboard-root :global(th.metric-pass-col),
+    .leaderboard-root :global(td.metric-pass-col) {
+        text-align: center;
+    }
+
+    .leaderboard-root :global(td.metric-pass-col) {
+        background-image: linear-gradient(180deg, var(--lb-pass-focus-bg), var(--lb-pass-focus-bg));
     }
 
     .leaderboard-root :global(th:first-child),
@@ -367,6 +410,36 @@ const payload = JSON.stringify({
         margin-bottom: 0.62rem;
         text-transform: uppercase;
         letter-spacing: 0.035em;
+    }
+
+    .leaderboard-root :global(.drill-grid) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        align-items: start;
+    }
+
+    .leaderboard-root :global(.drill-section) {
+        display: flex;
+        flex-direction: column;
+        align-self: start;
+        min-width: 0;
+        padding: 0.7rem;
+        border: 1px solid var(--lb-border-soft);
+        border-radius: 0.85rem;
+        background: var(--lb-drill-section-bg);
+    }
+
+    .leaderboard-root :global(.drill-section-title) {
+        margin-bottom: 0.6rem;
+        padding: 0.45rem 0.65rem;
+        border-radius: 0.7rem;
+        background: var(--lb-drill-section-title-bg);
+        color: var(--lb-text);
+        font-size: var(--lb-step-0);
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
     }
 
     .leaderboard-root :global(.drill-panel .table-wrap) {
@@ -592,12 +665,16 @@ const payload = JSON.stringify({
 
     .leaderboard-root :global(.lb-select) {
         appearance: none;
+        -webkit-appearance: none;
         font-size: var(--lb-step-1);
         min-width: 0;
         width: 100%;
+        max-width: 100%;
+        margin: 0;
+        flex: none;
         height: 2.4rem;
         box-sizing: border-box;
-        line-height: 2.4rem;
+        line-height: 1.2;
         white-space: nowrap;
         border-radius: 0.85rem;
         border: 1px solid var(--lb-select-border);
@@ -620,9 +697,11 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.conversion-filters) {
-        display: flex;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
         align-items: center;
-        gap: 1rem;
+        column-gap: 1rem;
+        row-gap: 0.6rem;
         width: 100%;
         margin-bottom: 0.65rem;
         padding: 0.55rem 0.84rem;
@@ -632,11 +711,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.lb-filter-pair) {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        flex: 1;
-        min-width: 0;
+        display: contents;
     }
 
     .leaderboard-root :global(.lb-filter-label) {
@@ -670,18 +745,27 @@ const payload = JSON.stringify({
         }
 
         .leaderboard-root :global(.conversion-filters) {
-            flex-direction: column;
-            align-items: stretch;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: center;
         }
 
         .leaderboard-root :global(.lb-filter-pair) {
-            flex: none;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 0;
             width: 100%;
+            grid-column: 1 / -1;
         }
 
         .leaderboard-root :global(td),
         .leaderboard-root :global(thead th) {
             padding: 0.72rem 0.62rem;
+        }
+
+        .leaderboard-root :global(.drill-grid) {
+            grid-template-columns: minmax(0, 1fr);
         }
 
         .leaderboard-root :global(.solution-model-line),
@@ -691,7 +775,7 @@ const payload = JSON.stringify({
     }
 </style>
 
-<div class="leaderboard-root">
+<div class="leaderboard-root not-content">
     <LeaderboardHeader fromOptions={fromOptions} toOptions={toOptions} />
 
     <script type="application/json" id="leaderboard-data" set:html={payload} />

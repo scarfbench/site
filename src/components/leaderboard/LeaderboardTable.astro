@@ -13,6 +13,18 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
 
 <div class="table-wrap">
     <table>
+        <colgroup>
+            <col class="col-rank" />
+            <col class="col-solution" />
+            <col class="col-date" />
+            <col class="col-pass1" />
+            <col class="col-pass1" />
+            <col class="col-pass1 col-pass-focus" />
+            <col class="col-pass3 col-group-divider" />
+            <col class="col-pass3" />
+            <col class="col-pass3 col-pass-focus" />
+            <col class="col-submission" />
+        </colgroup>
         <thead>
             <tr>
                 <th rowspan="2">Rank</th>
@@ -34,43 +46,43 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
                         </span>
                     </button>
                 </th>
-                <th class="group-head num" colspan="3">Pass@1</th>
-                <th class="group-head num" colspan="3">Pass@3</th>
+                <th class="group-head num group-pass1" colspan="3">Pass@1</th>
+                <th class="group-head num group-pass3" colspan="3">Pass@3</th>
                 <th class="submission-cell" rowspan="2">Submission</th>
             </tr>
             <tr>
-                <th class="num">
+                <th class="num group-pass1">
                     <button type="button" class="sort-button num" data-sort-key="compile1">
                         <span>Compile</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
                 </th>
-                <th class="num">
+                <th class="num group-pass1">
                     <button type="button" class="sort-button num" data-sort-key="run1">
                         <span>Deploy</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
                 </th>
-                <th class="num">
-                    <button type="button" class="sort-button num" data-sort-key="pass1">
+                <th class="num group-pass1 metric-pass-col">
+                    <button type="button" class="sort-button num metric-pass-sort" data-sort-key="pass1">
                         <span>Test</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
                 </th>
-                <th class="num">
+                <th class="num group-pass3 group-divider">
                     <button type="button" class="sort-button num" data-sort-key="compile3">
                         <span>Compile</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
                 </th>
-                <th class="num">
+                <th class="num group-pass3">
                     <button type="button" class="sort-button num" data-sort-key="run3">
                         <span>Deploy</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
                 </th>
-                <th class="num">
-                    <button type="button" class="sort-button num active" data-sort-key="pass3">
+                <th class="num group-pass3 metric-pass-col">
+                    <button type="button" class="sort-button num metric-pass-sort active" data-sort-key="pass3">
                         <span>Test</span>
                         <span class="sort-glyphs" aria-hidden="true"><span class="sort-up">▴</span><span class="sort-down">▾</span></span>
                     </button>
@@ -98,12 +110,12 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
                                 </div>
                             </td>
                             <td class="solution-date">{solution.date}</td>
-                            <td class:list={["num", metricClass(row.compile1, 0)]}>{formatMetric(row.compile1)}</td>
-                            <td class:list={["num", metricClass(row.run1, 1)]}>{formatMetric(row.run1)}</td>
-                            <td class:list={["num", metricClass(row.pass1, 2)]}>{formatMetric(row.pass1)}</td>
-                            <td class:list={["num", metricClass(row.compile3, 0)]}>{formatMetric(row.compile3)}</td>
-                            <td class:list={["num", metricClass(row.run3, 1)]}>{formatMetric(row.run3)}</td>
-                            <td class:list={["num", metricClass(row.pass3, 2)]}>{formatMetric(row.pass3)}</td>
+                            <td class:list={["num", "group-pass1", metricClass(row.compile1, 0)]}>{formatMetric(row.compile1)}</td>
+                            <td class:list={["num", "group-pass1", metricClass(row.run1, 1)]}>{formatMetric(row.run1)}</td>
+                            <td class:list={["num", "group-pass1", "metric-pass-col", metricClass(row.pass1, 2)]}>{formatMetric(row.pass1)}</td>
+                            <td class:list={["num", "group-pass3", "group-divider", metricClass(row.compile3, 0)]}>{formatMetric(row.compile3)}</td>
+                            <td class:list={["num", "group-pass3", metricClass(row.run3, 1)]}>{formatMetric(row.run3)}</td>
+                            <td class:list={["num", "group-pass3", "metric-pass-col", metricClass(row.pass3, 2)]}>{formatMetric(row.pass3)}</td>
                             <td class="submission-cell">
                                 <a class="submission-link" href="#" aria-label="Submission URL">
                                     <i class="fa-solid fa-link" aria-hidden="true" />

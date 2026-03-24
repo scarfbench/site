@@ -225,6 +225,14 @@ function renderMetricCell(value: MetricValue): string {
   return `<td class="num metric-cell"><div class="metric-bar-wrap"><div class="metric-bar" style="width:${width}%"></div><span class="metric-label">${label}</span></div></td>`;
 }
 
+function renderOverallMetricCell(
+  value: MetricValue,
+  metric: 0 | 1 | 2,
+  classes: string[],
+): string {
+  return `<td class="${["num", ...classes, metricClass(value, metric)].join(" ")}">${formatMetric(value)}</td>`;
+}
+
 // ── Ranking ─────────────────────────────────────────────────────────
 
 function rankOverall(scoreCube: AppScore[][][], layers: Layer[]): RankedRow[] {
@@ -302,12 +310,12 @@ function renderOverallTableRows(
       <td class="rank num">#${row.rank}</td>
       <td><strong class="solution-name">${solution.name}</strong><div class="solution-model-line"><em>(${solution.model})</em></div></td>
       <td class="solution-date">${solution.date}</td>
-      <td class="num ${metricClass(row.compile1, 0)}">${formatMetric(row.compile1)}</td>
-      <td class="num ${metricClass(row.run1, 1)}">${formatMetric(row.run1)}</td>
-      <td class="num ${metricClass(row.pass1, 2)}">${formatMetric(row.pass1)}</td>
-      <td class="num ${metricClass(row.compile3, 0)}">${formatMetric(row.compile3)}</td>
-      <td class="num ${metricClass(row.run3, 1)}">${formatMetric(row.run3)}</td>
-      <td class="num ${metricClass(row.pass3, 2)}">${formatMetric(row.pass3)}</td>
+      ${renderOverallMetricCell(row.compile1, 0, ["group-pass1"])}
+      ${renderOverallMetricCell(row.run1, 1, ["group-pass1"])}
+      ${renderOverallMetricCell(row.pass1, 2, ["group-pass1", "metric-pass-col"])}
+      ${renderOverallMetricCell(row.compile3, 0, ["group-pass3", "group-divider"])}
+      ${renderOverallMetricCell(row.run3, 1, ["group-pass3"])}
+      ${renderOverallMetricCell(row.pass3, 2, ["group-pass3", "metric-pass-col"])}
       <td class="submission-cell"><a class="submission-link" href="#" aria-label="Submission URL"><i class="fa-solid fa-link" aria-hidden="true"></i></a></td>
     </tr>`;
     })
@@ -325,14 +333,22 @@ function buildDrillContent(
   const solution = data.solutions[solutionIdx];
   const layerIndexes =
     layerIdx === -1 ? data.layers.map((_, i) => i) : [layerIdx];
-  let rows = "";
+  let pass1Rows = "";
+  let pass3Rows = "";
 
   for (const li of layerIndexes) {
     const layer = data.layers[li];
     const layerScores = scoreCube[solutionIdx][li];
     const metrics = aggregateScores(layerScores);
 
-    rows += `<tr class="layer-drill-row" data-layer-drill-clickable="true" data-drill-solution-idx="${solutionIdx}" data-drill-layer-idx="${li}">
+    pass1Rows += `<tr class="layer-drill-row" data-layer-drill-clickable="true" data-drill-solution-idx="${solutionIdx}" data-drill-layer-idx="${li}" data-pass-k="1">
+      <td><span class="layer-chevron" data-layer-idx="${li}">▸</span> ${layer.name}</td>
+      ${renderMetricCell(metrics.compile1)}
+      ${renderMetricCell(metrics.run1)}
+      ${renderMetricCell(metrics.pass1)}
+    </tr>`;
+
+    pass3Rows += `<tr class="layer-drill-row" data-layer-drill-clickable="true" data-drill-solution-idx="${solutionIdx}" data-drill-layer-idx="${li}" data-pass-k="3">
       <td><span class="layer-chevron" data-layer-idx="${li}">▸</span> ${layer.name}</td>
       ${renderMetricCell(metrics.compile3)}
       ${renderMetricCell(metrics.run3)}
@@ -345,7 +361,7 @@ function buildDrillContent(
       ? `All Layers \u2014 ${solution.name} (${solution.model})`
       : `${data.layers[layerIdx].name} \u2014 ${solution.name}`;
 
-  return `<div class="drill-panel"><div class="drill-title">${title}</div><div class="table-wrap"><table><colgroup><col class="layer-col" /><col class="compile-col" /><col class="deploy-col" /><col class="test-col" /></colgroup><thead><tr><th>Layer</th><th class="num">Compile</th><th class="num">Deploy</th><th class="num">Tests</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+  return `<div class="drill-panel"><div class="drill-title">${title}</div><div class="drill-grid"><div class="drill-section"><div class="drill-section-title">Pass@1</div><div class="table-wrap"><table><colgroup><col class="layer-col" /><col class="compile-col" /><col class="deploy-col" /><col class="test-col" /></colgroup><thead><tr><th>Layer</th><th class="num">Compile</th><th class="num">Deploy</th><th class="num">Tests</th></tr></thead><tbody>${pass1Rows}</tbody></table></div></div><div class="drill-section"><div class="drill-section-title">Pass@3</div><div class="table-wrap"><table><colgroup><col class="layer-col" /><col class="compile-col" /><col class="deploy-col" /><col class="test-col" /></colgroup><thead><tr><th>Layer</th><th class="num">Compile</th><th class="num">Deploy</th><th class="num">Tests</th></tr></thead><tbody>${pass3Rows}</tbody></table></div></div></div></div>`;
 }
 
 function renderAppBoolCell(count: number, total: number): string {
@@ -387,6 +403,7 @@ function renderAppRows(
   data: LeaderboardData,
   solutionIdx: number,
   layerIdx: number,
+  passK: 1 | 3,
 ): string {
   const layer = data.layers[layerIdx];
   let rows = "";
@@ -394,12 +411,16 @@ function renderAppRows(
   for (let appIdx = 0; appIdx < layer.apps.length; appIdx++) {
     const appName = layer.apps[appIdx];
     const s = scoreCube[solutionIdx][layerIdx][appIdx];
+    const compileCount = passK === 1 ? s.compile1Count : s.compile3Count;
+    const runCount = passK === 1 ? s.run1Count : s.run3Count;
+    const testsPassed = passK === 1 ? s.tests1Passed : s.tests3Passed;
+    const testsTotal = passK === 1 ? s.tests1Total : s.tests3Total;
 
     rows += `<tr class="app-detail-row" data-parent-layer="${layerIdx}">
       <td class="app-name-cell">&nbsp;&nbsp;↳ ${appName}</td>
-      ${renderAppBoolCell(s.compile3Count, s.unitCount)}
-      ${renderAppBoolCell(s.run3Count, s.unitCount)}
-      ${renderAppTestsCell(s.tests3Passed, s.tests3Total)}
+      ${renderAppBoolCell(compileCount, s.unitCount)}
+      ${renderAppBoolCell(runCount, s.unitCount)}
+      ${renderAppTestsCell(testsPassed, testsTotal)}
     </tr>`;
   }
   return rows;
@@ -475,6 +496,7 @@ function toggleAppDrill(
   const chevron = layerRow.querySelector<HTMLElement>(
     `.layer-chevron[data-layer-idx="${layerIdx}"]`,
   );
+  const passK = Number(layerRow.dataset.passK) === 1 ? 1 : 3;
 
   if (expandedSet.has(layerIdx)) {
     const tbody = layerRow.closest("tbody");
@@ -488,7 +510,13 @@ function toggleAppDrill(
     layerRow.classList.remove("layer-expanded");
     if (chevron) chevron.textContent = "▸";
   } else {
-    const appRowsHtml = renderAppRows(scoreCube, data, solutionIdx, layerIdx);
+    const appRowsHtml = renderAppRows(
+      scoreCube,
+      data,
+      solutionIdx,
+      layerIdx,
+      passK,
+    );
     layerRow.insertAdjacentHTML("afterend", appRowsHtml);
     expandedSet.add(layerIdx);
     layerRow.classList.add("layer-expanded");
