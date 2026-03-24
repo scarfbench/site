@@ -3,13 +3,7 @@
     {
       "id": "business domain",
       "name": "Business Domain",
-      "apps": [
-        "cart",
-        "converter",
-        "counter",
-        "helloservice",
-        "standalone"
-      ]
+      "apps": ["cart", "converter", "counter", "helloservice", "standalone"]
     },
     {
       "id": "dependency injection",
@@ -27,11 +21,7 @@
     {
       "id": "persistence",
       "name": "Persistence",
-      "apps": [
-        "address-book",
-        "order",
-        "roster"
-      ]
+      "apps": ["address-book", "order", "roster"]
     },
     {
       "id": "presentation",
@@ -71,10 +61,5 @@
       ]
     }
   ],
-  "solutions": [
-    "claude-code.json",
-    "gemini-cli.json",
-    "codex.json",
-    "qwen-cli.json"
-  ]
+  "solutions": ["claude.json", "gemini.json", "codex.json", "qwen.json"]
 }

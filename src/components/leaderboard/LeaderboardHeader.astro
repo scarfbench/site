@@ -1,13 +1,30 @@
 ---
 interface Props {
-    dates: string[];
+    fromOptions: string[];
+    toOptions: string[];
 }
 
-const { dates } = Astro.props as Props;
+const { fromOptions, toOptions } = Astro.props as Props;
 ---
 
 <div class="lb-page-header">
     <div>
         <div class="lb-page-title">Leaderboard</div>
+    </div>
+    <div class="conversion-filters">
+        <div class="lb-filter-pair">
+            <label class="lb-filter-label" for="filter-from">From</label>
+            <select id="filter-from" class="lb-select">
+                <option value="all">All</option>
+                {fromOptions.map((value) => <option value={value}>{value}</option>)}
+            </select>
+        </div>
+        <div class="lb-filter-pair">
+            <label class="lb-filter-label" for="filter-to">To</label>
+            <select id="filter-to" class="lb-select">
+                <option value="all">All</option>
+                {toOptions.map((value) => <option value={value}>{value}</option>)}
+            </select>
+        </div>
     </div>
 </div>

@@ -19,11 +19,13 @@ const solutionDataList = index.solutions.map((filename: string) => {
 
 const SOLUTIONS: Solution[] = solutionDataList.map((sd: any) => sd.solution);
 const solutionResults: RawResult[][] = solutionDataList.map((sd: any) => sd.results);
+const allResults: RawResult[] = solutionResults.flat();
+const fromOptions = [...new Set(allResults.map((r) => r.from))].sort();
+const toOptions = [...new Set(allResults.map((r) => r.to))].sort();
 
 // Build initial view (from=all, to=all) and rank
 const scoreCube = buildScoreCube(solutionResults, LAYERS, "all", "all");
 const overallRows = rankOverallRows(scoreCube, LAYERS);
-const uniqueDates = [...new Set(SOLUTIONS.map((s) => s.date))];
 
 // Payload for client — raw results so it can re-aggregate when filters change
 const payload = JSON.stringify({
@@ -49,6 +51,27 @@ const payload = JSON.stringify({
         --lb-green: #4aaf88;
         --lb-orange: #c38730;
         --lb-red: #e19797;
+        --lb-gradient-start: #25272b;
+        --lb-gradient-end: #1d1e21;
+        --lb-section-hover: #282b30;
+        --lb-thead-bg: #24262a;
+        --lb-row-hover: #2a2d33;
+        --lb-rank: #88acec;
+        --lb-solution-meta: #d5d7dd;
+        --lb-drill-bg-start: #2b2d31;
+        --lb-drill-bg-end: #26282c;
+        --lb-drill-title: #c5c8ce;
+        --lb-drill-inner-bg: #222427;
+        --lb-drill-th-bg: #26292d;
+        --lb-bar-track: rgba(255, 255, 255, 0.06);
+        --lb-bar-fill: rgba(143, 180, 239, 0.32);
+        --lb-app-row-bg: #1e2024;
+        --lb-app-row-border: #2a2d31;
+        --lb-app-metric-fail: #e19797;
+        --lb-select-border: #3c4048;
+        --lb-select-bg: #2a2d31;
+        --lb-select-arrow: #a9adb5;
+        --lb-filter-bg: #26282c;
         --lb-step--1: clamp(0.67rem, 0.66rem + 0.03vw, 0.72rem);
         --lb-step-0: clamp(0.76rem, 0.74rem + 0.06vw, 0.84rem);
         --lb-step-1: clamp(0.84rem, 0.8rem + 0.12vw, 0.96rem);
@@ -60,11 +83,50 @@ const payload = JSON.stringify({
         padding: clamp(0.7rem, 1.2vw, 1rem);
         border-radius: 1rem;
         border: 1px solid var(--lb-border);
-        background: linear-gradient(180deg, #25272b 0%, #1d1e21 80%);
+        background: linear-gradient(180deg, var(--lb-gradient-start) 0%, var(--lb-gradient-end) 80%);
         box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
         font-family: var(--sl-font-system);
         font-size: var(--lb-step-0);
         color: var(--lb-text);
+    }
+
+    :global(:root[data-theme="light"]) .leaderboard-root {
+        --lb-bg: #f6f8fb;
+        --lb-surface: #ffffff;
+        --lb-surface-soft: #f4f7fb;
+        --lb-border: #d8e0eb;
+        --lb-border-soft: #e7edf5;
+        --lb-text: #172133;
+        --lb-text-muted: #5d6980;
+        --lb-pill-bg: #e5efff;
+        --lb-pill-text: #2457b3;
+        --lb-blue-row: #dbe8ff;
+        --lb-blue-accent: #4f7fd1;
+        --lb-green: #197046;
+        --lb-orange: #a55f05;
+        --lb-red: #b14444;
+        --lb-gradient-start: #ffffff;
+        --lb-gradient-end: #f4f7fb;
+        --lb-section-hover: #f4f7fb;
+        --lb-thead-bg: #f4f7fb;
+        --lb-row-hover: #f6f9fc;
+        --lb-rank: #2457b3;
+        --lb-solution-meta: #22314a;
+        --lb-drill-bg-start: #f8fbff;
+        --lb-drill-bg-end: #f2f7fd;
+        --lb-drill-title: #4a5973;
+        --lb-drill-inner-bg: #ffffff;
+        --lb-drill-th-bg: #f4f7fb;
+        --lb-bar-track: rgba(29, 55, 105, 0.08);
+        --lb-bar-fill: rgba(79, 127, 209, 0.24);
+        --lb-app-row-bg: #fbfcfe;
+        --lb-app-row-border: #e5ebf3;
+        --lb-app-metric-fail: #b14444;
+        --lb-select-border: #cad4e1;
+        --lb-select-bg: #ffffff;
+        --lb-select-arrow: #6b778a;
+        --lb-filter-bg: #f5f8fc;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .section-header {
@@ -76,12 +138,12 @@ const payload = JSON.stringify({
         user-select: none;
         border: 1px solid var(--lb-border);
         border-radius: 0.95rem;
-        background: #232529;
+        background: var(--lb-surface);
         margin-bottom: 0.55rem;
     }
 
     .section-header:hover {
-        background: #282b30;
+        background: var(--lb-section-hover);
     }
 
     .section-label {
@@ -130,12 +192,62 @@ const payload = JSON.stringify({
         color: var(--lb-text-muted);
         font-size: var(--lb-step-1);
         border-bottom: 1px solid var(--lb-border);
-        background: #24262a;
+        background: var(--lb-thead-bg);
     }
 
     .leaderboard-root :global(thead th.num) {
         text-align: right;
         white-space: nowrap;
+    }
+
+    .leaderboard-root :global(thead .group-head) {
+        text-align: center;
+        color: var(--lb-text);
+    }
+
+    .leaderboard-root :global(.sort-button) {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-weight: 700;
+        padding: 0;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .leaderboard-root :global(.sort-button.num) {
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .leaderboard-root :global(.sort-button.active) {
+        color: var(--lb-text);
+    }
+
+    .leaderboard-root :global(.sort-glyphs) {
+        display: inline-flex;
+        flex-direction: column;
+        line-height: 0.75;
+        font-size: 0.7em;
+        color: var(--lb-text-muted);
+    }
+
+    .leaderboard-root :global(.sort-up),
+    .leaderboard-root :global(.sort-down) {
+        opacity: 0.45;
+        transition:
+            opacity 0.15s ease,
+            color 0.15s ease;
+    }
+
+    .leaderboard-root :global(.sort-button.active.asc .sort-up),
+    .leaderboard-root :global(.sort-button.active.desc .sort-down) {
+        opacity: 1;
+        color: var(--lb-pill-text);
     }
 
     .leaderboard-root :global(tbody tr) {
@@ -144,7 +256,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(tbody tr:hover td) {
-        background: #2a2d33;
+        background: var(--lb-row-hover);
     }
 
     .leaderboard-root :global(tbody tr.selected td) {
@@ -171,7 +283,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.rank) {
-        color: #88acec;
+        color: var(--lb-rank);
         font-weight: 700;
     }
 
@@ -209,7 +321,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.solution-meta) {
-        color: #d5d7dd;
+        color: var(--lb-solution-meta);
         font-weight: 700;
     }
 
@@ -224,7 +336,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.val-low) {
-        color: #d2d4d8;
+        color: var(--lb-text);
     }
 
     .leaderboard-root :global(.nan) {
@@ -235,12 +347,12 @@ const payload = JSON.stringify({
     .leaderboard-root :global(.drill-row td) {
         padding: 0;
         border-top: 1px solid var(--lb-border);
-        background: linear-gradient(90deg, #2b2d31 0%, #26282c 100%) !important;
+        background: linear-gradient(90deg, var(--lb-drill-bg-start) 0%, var(--lb-drill-bg-end) 100%) !important;
         cursor: default;
     }
 
     .leaderboard-root :global(.drill-row:hover td) {
-        background: linear-gradient(90deg, #2b2d31 0%, #26282c 100%) !important;
+        background: linear-gradient(90deg, var(--lb-drill-bg-start) 0%, var(--lb-drill-bg-end) 100%) !important;
     }
 
     .leaderboard-root :global(.drill-panel) {
@@ -251,7 +363,7 @@ const payload = JSON.stringify({
     .leaderboard-root :global(.drill-title) {
         font-size: var(--lb-step-1);
         font-weight: 700;
-        color: #c5c8ce;
+        color: var(--lb-drill-title);
         margin-bottom: 0.62rem;
         text-transform: uppercase;
         letter-spacing: 0.035em;
@@ -262,7 +374,7 @@ const payload = JSON.stringify({
         border: 1px solid var(--lb-border-soft);
         border-radius: 0.8rem;
         overflow: hidden;
-        background: #222427;
+        background: var(--lb-drill-inner-bg);
         box-sizing: border-box;
     }
 
@@ -297,7 +409,7 @@ const payload = JSON.stringify({
         font-weight: 700;
         color: var(--lb-text-muted);
         border-bottom: 1px solid var(--lb-border-soft);
-        background: #26292d;
+        background: var(--lb-drill-th-bg);
     }
 
     .leaderboard-root :global(.drill-panel th.num),
@@ -342,7 +454,7 @@ const payload = JSON.stringify({
         grid-row: 1;
         height: 0.9rem;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--lb-bar-track);
     }
 
     .leaderboard-root :global(.drill-panel .metric-bar) {
@@ -350,7 +462,7 @@ const payload = JSON.stringify({
         grid-row: 1;
         height: 0.9rem;
         border-radius: 999px;
-        background: rgba(143, 180, 239, 0.32);
+        background: var(--lb-bar-fill);
         min-width: 0;
         width: 100%;
         max-width: 100%;
@@ -376,11 +488,11 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.layer-drill-row:hover td) {
-        background: #2a2d33;
+        background: var(--lb-row-hover);
     }
 
     .leaderboard-root :global(.layer-drill-row.layer-expanded td) {
-        background: #282b30;
+        background: var(--lb-section-hover);
         border-bottom-color: var(--lb-border);
     }
 
@@ -394,10 +506,10 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.app-detail-row td) {
-        background: #1e2024;
+        background: var(--lb-app-row-bg);
         padding-top: 0.45rem;
         padding-bottom: 0.45rem;
-        border-bottom: 1px solid #2a2d31;
+        border-bottom: 1px solid var(--lb-app-row-border);
     }
 
     .leaderboard-root :global(.app-detail-row:last-child td),
@@ -429,7 +541,7 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.app-metric-fail) {
-        color: #e19797;
+        color: var(--lb-app-metric-fail);
         font-weight: 700;
     }
 
@@ -481,20 +593,23 @@ const payload = JSON.stringify({
     .leaderboard-root :global(.lb-select) {
         appearance: none;
         font-size: var(--lb-step-1);
-        min-width: clamp(7.8rem, 17vw, 10.8rem);
+        min-width: 0;
+        width: 100%;
         height: 2.4rem;
         box-sizing: border-box;
         line-height: 2.4rem;
         white-space: nowrap;
         border-radius: 0.85rem;
-        border: 1px solid #3c4048;
-        background-color: #2a2d31;
+        border: 1px solid var(--lb-select-border);
+        background-color: var(--lb-select-bg);
         color: var(--lb-text);
         font-weight: 600;
         padding: 0 2rem 0 0.78rem;
         vertical-align: middle;
         display: inline-block;
-        background-image: linear-gradient(45deg, transparent 50%, #a9adb5 50%), linear-gradient(135deg, #a9adb5 50%, transparent 50%);
+        background-image:
+            linear-gradient(45deg, transparent 50%, var(--lb-select-arrow) 50%),
+            linear-gradient(135deg, var(--lb-select-arrow) 50%, transparent 50%);
         background-position:
             calc(100% - 0.86rem) calc(50% - 0.13rem),
             calc(100% - 0.58rem) calc(50% - 0.13rem);
@@ -507,20 +622,21 @@ const payload = JSON.stringify({
     .leaderboard-root :global(.conversion-filters) {
         display: flex;
         align-items: center;
-        gap: 0.7rem;
-        justify-content: flex-start;
-        margin-left: 0;
+        gap: 1rem;
+        width: 100%;
         margin-bottom: 0.65rem;
         padding: 0.55rem 0.84rem;
         border: 1px solid var(--lb-border-soft);
         border-radius: 0.85rem;
-        background: #26282c;
+        background: var(--lb-filter-bg);
     }
 
     .leaderboard-root :global(.lb-filter-pair) {
         display: flex;
-        align-items: baseline;
-        gap: 0.45rem;
+        align-items: center;
+        gap: 0.75rem;
+        flex: 1;
+        min-width: 0;
     }
 
     .leaderboard-root :global(.lb-filter-label) {
@@ -530,6 +646,7 @@ const payload = JSON.stringify({
         text-transform: uppercase;
         letter-spacing: 0.04em;
         white-space: nowrap;
+        line-height: 1;
     }
 
     .leaderboard-root :global(.lb-filter-sep) {
@@ -552,6 +669,16 @@ const payload = JSON.stringify({
             padding-top: 0;
         }
 
+        .leaderboard-root :global(.conversion-filters) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .leaderboard-root :global(.lb-filter-pair) {
+            flex: none;
+            width: 100%;
+        }
+
         .leaderboard-root :global(td),
         .leaderboard-root :global(thead th) {
             padding: 0.72rem 0.62rem;
@@ -565,7 +692,7 @@ const payload = JSON.stringify({
 </style>
 
 <div class="leaderboard-root">
-    <LeaderboardHeader dates={uniqueDates} />
+    <LeaderboardHeader fromOptions={fromOptions} toOptions={toOptions} />
 
     <script type="application/json" id="leaderboard-data" set:html={payload} />
     <script>
