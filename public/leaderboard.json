@@ -61,5 +61,11 @@
       ]
     }
   ],
-  "solutions": ["claude.json", "gemini.json", "codex.json", "qwen.json"]
+  "solutions": [
+    "claude.json",
+    "gemini.json",
+    "codex.json",
+    "glm5.json",
+    "kimi.json"
+  ]
 }

@@ -38,6 +38,8 @@ interface AppScore {
   tests3Passed: number;
   tests3Total: number;
   unitCount: number;
+  canonicalTests1Total: number;
+  canonicalTests3Total: number;
 }
 
 interface LeaderboardData {
@@ -141,6 +143,8 @@ function buildScoreCube(
             tests3Passed: 0,
             tests3Total: 0,
             unitCount: 0,
+            canonicalTests1Total: 0,
+            canonicalTests3Total: 0,
           };
         const units = matching.map((r) => passAtK(r.repeats));
         return {
@@ -153,10 +157,58 @@ function buildScoreCube(
           tests3Passed: units.reduce((s, u) => s + u.k3.testsPassed, 0),
           tests3Total: units.reduce((s, u) => s + u.k3.testsTotal, 0),
           unitCount: units.length,
+          canonicalTests1Total: 0,
+          canonicalTests3Total: 0,
         };
       }),
     );
   });
+}
+
+function computeCanonicalTestsCube(
+  solutionResults: RawResult[][],
+  layers: Layer[],
+  fromFilter: string,
+  toFilter: string,
+): { k1: number; k3: number }[][] {
+  return layers.map((layer) =>
+    layer.apps.map((app) => {
+      // Test count is a property of (app, to) — collect max per target framework
+      const pairMax1 = new Map<string, number>();
+      const pairMax3 = new Map<string, number>();
+
+      for (const results of solutionResults) {
+        const matching = results.filter((r) => {
+          if (fromFilter !== "all" && r.from !== fromFilter) return false;
+          if (toFilter !== "all" && r.to !== toFilter) return false;
+          return r.layer === layer.id && r.app === app;
+        });
+        for (const r of matching) {
+          const { k1, k3 } = passAtK(r.repeats);
+          pairMax1.set(r.to, Math.max(pairMax1.get(r.to) ?? 0, k1.testsTotal));
+          pairMax3.set(r.to, Math.max(pairMax3.get(r.to) ?? 0, k3.testsTotal));
+        }
+      }
+
+      const k1 = [...pairMax1.values()].reduce((s, v) => s + v, 0);
+      const k3 = [...pairMax3.values()].reduce((s, v) => s + v, 0);
+      return { k1, k3 };
+    }),
+  );
+}
+
+function applyCanonicalTotals(
+  scoreCube: AppScore[][][],
+  canonicalCube: { k1: number; k3: number }[][],
+): void {
+  for (const solutionLayers of scoreCube) {
+    for (let li = 0; li < solutionLayers.length; li++) {
+      for (let ai = 0; ai < solutionLayers[li].length; ai++) {
+        solutionLayers[li][ai].canonicalTests1Total = canonicalCube[li][ai].k1;
+        solutionLayers[li][ai].canonicalTests3Total = canonicalCube[li][ai].k3;
+      }
+    }
+  }
 }
 
 // ── Score aggregation (sum/sum, never average-of-averages) ──────────
@@ -183,18 +235,18 @@ function aggregateScores(scores: AppScore[]): {
   const compile1 =
     (scores.reduce((s, a) => s + a.compile1Count, 0) / totalUnits) * 100;
   const run1 = (scores.reduce((s, a) => s + a.run1Count, 0) / totalUnits) * 100;
-  const tests1Total = scores.reduce((s, a) => s + a.tests1Total, 0);
+  const canon1Total = scores.reduce((s, a) => s + a.canonicalTests1Total, 0);
   const pass1 =
-    tests1Total > 0
-      ? (scores.reduce((s, a) => s + a.tests1Passed, 0) / tests1Total) * 100
+    canon1Total > 0
+      ? (scores.reduce((s, a) => s + a.tests1Passed, 0) / canon1Total) * 100
       : null;
   const compile3 =
     (scores.reduce((s, a) => s + a.compile3Count, 0) / totalUnits) * 100;
   const run3 = (scores.reduce((s, a) => s + a.run3Count, 0) / totalUnits) * 100;
-  const tests3Total = scores.reduce((s, a) => s + a.tests3Total, 0);
+  const canon3Total = scores.reduce((s, a) => s + a.canonicalTests3Total, 0);
   const pass3 =
-    tests3Total > 0
-      ? (scores.reduce((s, a) => s + a.tests3Passed, 0) / tests3Total) * 100
+    canon3Total > 0
+      ? (scores.reduce((s, a) => s + a.tests3Passed, 0) / canon3Total) * 100
       : null;
   return { compile1, run1, pass1, compile3, run3, pass3 };
 }
@@ -554,6 +606,10 @@ export function initLeaderboard(): void {
     currentFrom,
     currentTo,
   );
+  applyCanonicalTotals(
+    currentScoreCube,
+    computeCanonicalTestsCube(data.solutionResults, data.layers, currentFrom, currentTo),
+  );
 
   // --- From / To dropdown handlers ---
   const filterFrom = document.getElementById(
@@ -607,6 +663,10 @@ export function initLeaderboard(): void {
       data.layers,
       currentFrom,
       currentTo,
+    );
+    applyCanonicalTotals(
+      currentScoreCube,
+      computeCanonicalTestsCube(data.solutionResults, data.layers, currentFrom, currentTo),
     );
     renderOverall();
   }
