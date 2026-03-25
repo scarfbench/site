@@ -1,0 +1,73 @@
+/* Custom SCARF styling for MkDocs Material theme */
+
+:root {
+    --red-accent: #ff3333;
+    --red-accent-hover: #ff5555;
+}
+
+/* Expand main content area - give more horizontal space */
+.md-grid {
+    max-width: 1400px;
+}
+
+.md-content {
+    max-width: none;
+}
+
+.md-content__inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Scarf emoji in header */
+.md-header__button.md-logo {
+    font-size: 1.5rem;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    display: none;
+}
+
+/* Button styling */
+.md-button {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.md-button--primary {
+    background-color: var(--red-accent);
+    border-color: var(--red-accent);
+}
+
+.md-button--primary:hover {
+    background-color: var(--red-accent-hover);
+    transform: translateY(-1px);
+}
+
+/* External arrow */
+.external-arrow {
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: 0.25em;
+    vertical-align: baseline;
+}
+
+/* Footer customization */
+/* Move social icons down */
+.md-footer-meta {
+    padding-top: 1.5rem;
+}
+
+.md-footer-meta .md-social {
+    margin-bottom: 1rem;
+}
+
+/* Style the custom copyright text */
+.custom-copyright {
+    text-align: right;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
