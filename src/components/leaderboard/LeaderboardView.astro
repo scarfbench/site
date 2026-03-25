@@ -1,7 +1,7 @@
 ---
 import LeaderboardHeader from "./LeaderboardHeader.astro";
 import LeaderboardTable from "./LeaderboardTable.astro";
-import { buildScoreCube, rankOverallRows } from "./data";
+import { buildScoreCube, computeCanonicalTestsCube, applyCanonicalTotals, rankOverallRows } from "./data";
 import type { Solution, Layer, RawResult } from "./data";
 import fs from "node:fs";
 import path from "node:path";
@@ -25,6 +25,8 @@ const toOptions = [...new Set(allResults.map((r) => r.to))].sort();
 
 // Build initial view (from=all, to=all) and rank
 const scoreCube = buildScoreCube(solutionResults, LAYERS, "all", "all");
+const canonicalCube = computeCanonicalTestsCube(solutionResults, LAYERS, "all", "all");
+applyCanonicalTotals(scoreCube, canonicalCube);
 const overallRows = rankOverallRows(scoreCube, LAYERS);
 
 // Payload for client — raw results so it can re-aggregate when filters change
