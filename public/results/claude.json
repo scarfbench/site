@@ -1,7 +1,7 @@
 {
   "solution": {
-    "name": "Claude",
-    "model": "claude-opus-4-6",
+    "name": "claude-opus-4-6",
+    "model": "claude-code",
     "date": "2026-03-24"
   },
   "results": [
