@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host 0.0.0.0 --port 7860 --allowed-hosts .hf.space",
     "astro": "astro"
   },
   "dependencies": {
