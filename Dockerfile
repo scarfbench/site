@@ -1,5 +1,5 @@
 # Base image
-FROM node:20-alpine AS base
+FROM quay.io/jitesoft/node:current AS base
 
 # Helpful for HF Spaces / Dev Mode
 RUN apk add --no-cache git
