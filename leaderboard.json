@@ -1,0 +1,71 @@
+{
+  "layers": [
+    {
+      "id": "business domain",
+      "name": "Business Domain",
+      "apps": ["cart", "converter", "counter", "helloservice", "standalone"]
+    },
+    {
+      "id": "dependency injection",
+      "name": "Dependency Injection",
+      "apps": [
+        "billpayment",
+        "decorators",
+        "encoder",
+        "guessnumber",
+        "producerfields",
+        "producermethods",
+        "simplegreeting"
+      ]
+    },
+    {
+      "id": "persistence",
+      "name": "Persistence",
+      "apps": ["address-book", "order", "roster"]
+    },
+    {
+      "id": "presentation",
+      "name": "Presentation",
+      "apps": [
+        "dukeetf",
+        "dukeetf2",
+        "fileupload",
+        "hello-servlet",
+        "jaxrs-customer",
+        "jaxrs-hello",
+        "jaxrs-rsvp",
+        "mood",
+        "websocketbot"
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infrastructure",
+      "apps": [
+        "concurrency-jobs",
+        "concurrency-taskcreator",
+        "ejb-async",
+        "ejb-interceptor",
+        "ejb-timersession"
+      ]
+    },
+    {
+      "id": "whole applications",
+      "name": "Whole Applications",
+      "apps": [
+        "cargotracker",
+        "coffee-shop",
+        "daytrader",
+        "petclinic",
+        "realworld"
+      ]
+    }
+  ],
+  "solutions": [
+    "claude.json",
+    "gemini.json",
+    "codex.json",
+    "glm5.json",
+    "kimi.json"
+  ]
+}
