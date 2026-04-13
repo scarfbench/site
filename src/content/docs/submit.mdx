@@ -69,15 +69,6 @@ Notes:
 - This submission contains the entire `eval_out` directory produced by `scarf eval run`. Reviewers can inspect individual runs under `eval_out/<agent>/<run_*>`.
 ```
 
-### Verify submission locally
-
-Before opening the PR, you can run local validation steps to sanity-check the submission. For example, validate each run's conversions (replace paths accordingly):
-
-```bash
-# Validate each run directory found in the payload
-scarf validate -vv --conversions-dir /tmp/submit-payload/eval_out --benchmark-dir /path/to/benchmark 
-```
-
 ### What to include and what to avoid
 
 - Include: `conversions/` tree, `metadata.json`, `validation.log`, and a short README describing how the conversion was produced.

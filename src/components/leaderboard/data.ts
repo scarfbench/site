@@ -1,11 +1,17 @@
 export type MetricValue = number | null;
 
+const normalizeLayer = (s: string): string => s.replace(/[-_]/g, " ");
+const layerEq = (a: string, b: string): boolean =>
+  normalizeLayer(a) === normalizeLayer(b);
+
 // --- Shared types ---
 
 export interface Solution {
-  name: string;
+  agent: string;
   model: string;
+  variant?: string;
   date: string;
+  submission?: string;
 }
 
 export interface Layer {
@@ -143,7 +149,7 @@ export function buildScoreCube(
     return layers.map((layer) => {
       return layer.apps.map((app) => {
         const matching = filtered.filter(
-          (r) => r.layer === layer.id && r.app === app,
+          (r) => layerEq(r.layer, layer.id) && r.app === app,
         );
 
         if (matching.length === 0) {
@@ -205,7 +211,7 @@ export function computeCanonicalTestsCube(
         const matching = results.filter((r) => {
           if (fromFilter !== "all" && r.from !== fromFilter) return false;
           if (toFilter !== "all" && r.to !== toFilter) return false;
-          return r.layer === layer.id && r.app === app;
+          return layerEq(r.layer, layer.id) && r.app === app;
         });
         for (const r of matching) {
           const { k1, k3 } = passAtK(r.repeats);

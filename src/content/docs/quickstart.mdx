@@ -67,14 +67,19 @@ The `agent.toml` file is a required configuration file that provides metadata ab
 
 | Field | Required | Description |
 |------|----------|-------------|
-| `name` | yes | Logical name of the agent (used in run metadata and reporting) |
-| `entrypoint` | yes | Command (relative to agent directory) used to run the agent |
+| `solution_name` | yes | Logical name of the agent / harness (e.g. `claude-code`, `codex-cli`). Used in run metadata, leaderboard, and reporting. |
+| `model` | yes | LLM model identifier the agent uses (e.g. `claude-opus-4.6`, `gpt-5.3-codex`). |
+| `description` | no | Short human description of the agent. |
+| `entrypoint` | yes | Executable (relative to agent directory) used to run the agent. |
+| `variant` | no | Optional discriminator when you submit multiple variants of the same agent + model (e.g. `with-skills`, `with-claude-md`). |
 
 ##### Minimal example
 
 ```toml
-name = "example-application-migrator-agent"
-entrypoint = ["run.sh"]
+solution_name = "claude-code"
+model         = "claude-opus-4.6"
+description   = "Claude code (with a monolith CLAUDE.md) for framework migration"
+entrypoint    = "run.sh"
 ```
 
 > The `scarf` CLI executes the entrypoint exactly as specified relative to the agent directory. For example, if your entrypoint is `run.sh`, and your agent directory is `/path/to/agent-dir`, `scarf` executes `/path/to/agent-dir/run.sh` when running your agent.
@@ -127,9 +132,10 @@ Each `SKILL.md` can contain migration instructions for exactly one conversion pa
 Use an entrypoint that points to your shell wrapper:
 
 ```toml
-name        = "codex-framework-migration"
-description = "Sample implementation of a framework-migration agent for ScarfBench."
-entrypoint  = "./run.sh"
+solution_name = "codex"
+model         = "gpt-5.2"
+description   = "Sample implementation of a framework-migration agent for ScarfBench using Codex."
+entrypoint    = "./run.sh"
 ```
 
 #### 3) A typical `run.sh` declaration
@@ -253,31 +259,3 @@ The directory structure will contain the following:
 
 The `validation` directory contains the stdout and stderr from the agent's run!
 
-You can use the scarf validate command to validate the output against the target framework.
-
-```bash
-scarf validate -vv \
-    --conversions-dir /tmp/eval_out/ \  # <-- Output directory for evaluation results were agent ran 
-    --benchmark-dir /tmp/benchmark/     # <-- Directory where the benchmark was pulled to
-```
-
-#### What Happens here?
-This will run the validation process, checking the converted code in the `/tmp/eval_out` directory by running 
-`make test`. This gives us---
-
-1. Update the `validation` directory with the results of the validation and create a `run.log` file with the validation 
-results of make test
-2. The output directory `validation` will also have a `trajectory.md` which will have a full record of the agent's trajectory. This is optional if the agent is configured to do so.
-
-```
-/tmp/eval_out
-└── run_1
-    ├── input           
-    ├── output          
-    ├── validation      
-    │   ├── agent.err   
-    │   ├── agent.out   
-    │   ├── trajectory.md   # <-- This file contains the agent's trajectory
-    │   └── run.log         # <-- This file contains the results of the validation
-    └── metadata.json   
-```

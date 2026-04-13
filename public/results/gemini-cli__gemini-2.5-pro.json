@@ -1,18 +1,18 @@
 {
   "solution": {
-    "name": "kimi-k2.5",
-    "model": "opencode",
-    "date": "2026-03-25"
+    "agent": "gemini-cli",
+    "model": "gemini-2.5-pro",
+    "date": "2026-04-13"
   },
   "results": [
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "cart",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -24,7 +24,7 @@
           "tests_total": 8
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -34,7 +34,7 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "converter",
       "repeats": [
         {
@@ -44,13 +44,13 @@
           "tests_total": 21
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 21
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 21
@@ -60,7 +60,7 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "counter",
       "repeats": [
         {
@@ -71,33 +71,33 @@
         },
         {
           "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
           "run": true,
           "tests_passed": 3,
           "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
         }
       ]
     },
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "helloservice",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 17
         },
         {
-          "compile": true,
-          "run": true,
+          "compile": false,
+          "run": false,
           "tests_passed": 0,
           "tests_total": 17
         },
@@ -112,17 +112,11 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "standalone",
       "repeats": [
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
@@ -132,6 +126,194 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "billpayment",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
         }
       ]
     },
@@ -142,20 +324,20 @@
       "app": "concurrency-jobs",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
         },
         {
           "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
+          "run": true,
           "tests_passed": 0,
           "tests_total": 8
         }
@@ -168,13 +350,13 @@
       "app": "concurrency-taskcreator",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 6
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 6
@@ -220,19 +402,19 @@
       "app": "ejb-interceptor",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
+          "compile": true,
+          "run": true,
           "tests_passed": 0,
           "tests_total": 8
         },
         {
           "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -253,12 +435,12 @@
         },
         {
           "compile": true,
-          "run": false,
+          "run": true,
           "tests_passed": 0,
           "tests_total": 6
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 6
@@ -272,125 +454,179 @@
       "app": "address-book",
       "repeats": [
         {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "quarkus",
-      "layer": "persistence",
-      "app": "order",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "quarkus",
-      "layer": "persistence",
-      "app": "roster",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "dukeetf",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "dukeetf2",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
         },
         {
           "compile": true,
           "run": true,
           "tests_passed": 10,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 10,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "persistence",
+      "app": "order",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "persistence",
+      "app": "roster",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 2,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 2,
+          "tests_total": 25
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "dukeetf",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "dukeetf2",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 11
         }
       ]
@@ -403,8 +639,8 @@
       "repeats": [
         {
           "compile": true,
-          "run": true,
-          "tests_passed": 4,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 6
         },
         {
@@ -415,8 +651,8 @@
         },
         {
           "compile": true,
-          "run": true,
-          "tests_passed": 5,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 6
         }
       ]
@@ -429,7 +665,7 @@
       "repeats": [
         {
           "compile": true,
-          "run": true,
+          "run": false,
           "tests_passed": 0,
           "tests_total": 15
         },
@@ -441,8 +677,8 @@
         },
         {
           "compile": true,
-          "run": true,
-          "tests_passed": 15,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 15
         }
       ]
@@ -454,19 +690,19 @@
       "app": "jaxrs-customer",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -480,19 +716,19 @@
       "app": "jaxrs-hello",
       "repeats": [
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 8,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 8
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 8,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 8
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -512,7 +748,7 @@
           "tests_total": 10
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -539,12 +775,12 @@
         },
         {
           "compile": true,
-          "run": true,
-          "tests_passed": 7,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 7
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 7
@@ -558,21 +794,21 @@
       "app": "websocketbot",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 21
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 21
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 19,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 21
         }
       ]
@@ -580,39 +816,39 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "whole applications",
+      "layer": "whole_applications",
       "app": "cargotracker",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "quarkus",
-      "layer": "whole applications",
-      "app": "coffee-shop",
       "repeats": [
         {
           "compile": false,
           "run": false,
           "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 34
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "coffee-shop",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 9
         },
         {
@@ -622,7 +858,7 @@
           "tests_total": 9
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
@@ -632,7 +868,7 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "whole applications",
+      "layer": "whole_applications",
       "app": "daytrader",
       "repeats": [
         {
@@ -648,9 +884,9 @@
           "tests_total": 30
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 3,
           "tests_total": 30
         }
       ]
@@ -658,7 +894,7 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "whole applications",
+      "layer": "whole_applications",
       "app": "petclinic",
       "repeats": [
         {
@@ -668,7 +904,7 @@
           "tests_total": 13
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 13
@@ -684,7 +920,7 @@
     {
       "from": "jakarta",
       "to": "quarkus",
-      "layer": "whole applications",
+      "layer": "whole_applications",
       "app": "realworld",
       "repeats": [
         {
@@ -694,7 +930,7 @@
           "tests_total": 62
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 62
@@ -710,7 +946,7 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "cart",
       "repeats": [
         {
@@ -736,7 +972,7 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "converter",
       "repeats": [
         {
@@ -762,11 +998,11 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "counter",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
@@ -778,9 +1014,9 @@
           "tests_total": 9
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 3,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
           "tests_total": 9
         }
       ]
@@ -788,7 +1024,7 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "helloservice",
       "repeats": [
         {
@@ -804,7 +1040,7 @@
           "tests_total": 17
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 17
@@ -814,23 +1050,23 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "business domain",
+      "layer": "business_domain",
       "app": "standalone",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
@@ -840,11 +1076,115 @@
     {
       "from": "jakarta",
       "to": "spring",
-      "layer": "infrastructure",
-      "app": "concurrency-jobs",
+      "layer": "dependency_injection",
+      "app": "billpayment",
       "repeats": [
         {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
           "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -856,7 +1196,85 @@
           "tests_total": 8
         },
         {
-          "compile": true,
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "concurrency-jobs",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -870,7 +1288,7 @@
       "app": "concurrency-taskcreator",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 6
@@ -882,7 +1300,7 @@
           "tests_total": 6
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 6
@@ -896,7 +1314,7 @@
       "app": "ejb-async",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
@@ -922,19 +1340,19 @@
       "app": "ejb-interceptor",
       "repeats": [
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
         },
         {
           "compile": true,
-          "run": false,
+          "run": true,
           "tests_passed": 0,
           "tests_total": 8
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 8
@@ -990,231 +1408,15 @@
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "persistence",
-      "app": "order",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
         },
         {
           "compile": true,
-          "run": true,
-          "tests_passed": 5,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 5,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "persistence",
-      "app": "roster",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 24
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "dukeetf",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 3,
-          "tests_total": 4
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "dukeetf2",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "fileupload",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 5,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "hello-servlet",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 15,
-          "tests_total": 15
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-customer",
-      "repeats": [
-        {
-          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
         },
         {
-          "compile": true,
-          "run": true,
-          "tests_passed": 9,
-          "tests_total": 10
-        },
-        {
           "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-hello",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 7,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-rsvp",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 8,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 10
@@ -1229,1176 +1431,6 @@
     },
     {
       "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "mood",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "websocketbot",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "cargotracker",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "coffee-shop",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "daytrader",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "petclinic",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        }
-      ]
-    },
-    {
-      "from": "jakarta",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "realworld",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "cart",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "converter",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "counter",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "helloservice",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "standalone",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "concurrency-jobs",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "concurrency-taskcreator",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-async",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-interceptor",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-timersession",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "address-book",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "order",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "roster",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "dukeetf",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "dukeetf2",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "fileupload",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "hello-servlet",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "jaxrs-customer",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "jaxrs-hello",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "jaxrs-rsvp",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "mood",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "websocketbot",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "cargotracker",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "coffee-shop",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "daytrader",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "petclinic",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "realworld",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "business domain",
-      "app": "cart",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "business domain",
-      "app": "converter",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "business domain",
-      "app": "counter",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 3,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "business domain",
-      "app": "helloservice",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 16,
-          "tests_total": 17
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 16,
-          "tests_total": 17
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "business domain",
-      "app": "standalone",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 9,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "infrastructure",
-      "app": "concurrency-jobs",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "infrastructure",
-      "app": "concurrency-taskcreator",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "infrastructure",
-      "app": "ejb-async",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "infrastructure",
-      "app": "ejb-interceptor",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "infrastructure",
-      "app": "ejb-timersession",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "persistence",
-      "app": "address-book",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
       "to": "spring",
       "layer": "persistence",
       "app": "order",
@@ -2410,7 +1442,25 @@
           "tests_total": 11
         },
         {
+          "compile": true,
+          "run": true,
+          "tests_passed": 5,
+          "tests_total": 11
+        },
+        {
           "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
@@ -2424,7 +1474,7 @@
       ]
     },
     {
-      "from": "quarkus",
+      "from": "jakarta",
       "to": "spring",
       "layer": "persistence",
       "app": "roster",
@@ -2442,7 +1492,25 @@
           "tests_total": 24
         },
         {
-          "compile": false,
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 24
@@ -2450,710 +1518,8 @@
       ]
     },
     {
-      "from": "quarkus",
+      "from": "jakarta",
       "to": "spring",
-      "layer": "presentation",
-      "app": "dukeetf",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 4,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "dukeetf2",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "fileupload",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "hello-servlet",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-customer",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 9,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-hello",
-      "repeats": [
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 7,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 7,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "jaxrs-rsvp",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "mood",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "presentation",
-      "app": "websocketbot",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "cargotracker",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "coffee-shop",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "daytrader",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 20
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "petclinic",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 13
-        }
-      ]
-    },
-    {
-      "from": "quarkus",
-      "to": "spring",
-      "layer": "whole applications",
-      "app": "realworld",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "cart",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 14
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "converter",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "counter",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "helloservice",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "business domain",
-      "app": "standalone",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "concurrency-jobs",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "concurrency-taskcreator",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-async",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-interceptor",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "infrastructure",
-      "app": "ejb-timersession",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "address-book",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "order",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "persistence",
-      "app": "roster",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
       "layer": "presentation",
       "app": "dukeetf",
       "repeats": [
@@ -3178,8 +1544,8 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "dukeetf2",
       "repeats": [
@@ -3190,13 +1556,13 @@
           "tests_total": 11
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 11,
           "tests_total": 11
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
           "tests_total": 11
@@ -3204,60 +1570,60 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "fileupload",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 5,
           "tests_total": 6
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 5,
           "tests_total": 6
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 5,
           "tests_total": 6
         }
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "hello-servlet",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 12,
           "tests_total": 15
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 12,
           "tests_total": 15
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 12,
           "tests_total": 15
         }
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "jaxrs-customer",
       "repeats": [
@@ -3282,34 +1648,34 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "jaxrs-hello",
       "repeats": [
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 6,
           "tests_total": 8
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 6,
           "tests_total": 8
         },
         {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
+          "compile": true,
+          "run": true,
+          "tests_passed": 6,
           "tests_total": 8
         }
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "jaxrs-rsvp",
       "repeats": [
@@ -3334,710 +1700,8 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "mood",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "presentation",
-      "app": "websocketbot",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "cargotracker",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 34
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "coffee-shop",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "daytrader",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "petclinic",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 36
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "jakarta",
-      "layer": "whole applications",
-      "app": "realworld",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 62
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "business domain",
-      "app": "cart",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "business domain",
-      "app": "converter",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 21,
-          "tests_total": 21
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 21
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "business domain",
-      "app": "counter",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "business domain",
-      "app": "helloservice",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 17
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "business domain",
-      "app": "standalone",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 9
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "infrastructure",
-      "app": "concurrency-jobs",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "infrastructure",
-      "app": "concurrency-taskcreator",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "infrastructure",
-      "app": "ejb-async",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 1
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 1
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 1
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "infrastructure",
-      "app": "ejb-interceptor",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "infrastructure",
-      "app": "ejb-timersession",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "persistence",
-      "app": "address-book",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "persistence",
-      "app": "order",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 7
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "persistence",
-      "app": "roster",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 25
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "dukeetf",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 4,
-          "tests_total": 4
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 4
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "dukeetf2",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 11
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "fileupload",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 6
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "hello-servlet",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        },
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 15
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "jaxrs-customer",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": true,
-          "tests_passed": 9,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "jaxrs-hello",
-      "repeats": [
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 8
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "presentation",
-      "app": "jaxrs-rsvp",
-      "repeats": [
-        {
-          "compile": false,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        },
-        {
-          "compile": true,
-          "run": false,
-          "tests_passed": 0,
-          "tests_total": 10
-        }
-      ]
-    },
-    {
-      "from": "spring",
-      "to": "quarkus",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "mood",
       "repeats": [
@@ -4049,8 +1713,8 @@
         },
         {
           "compile": true,
-          "run": false,
-          "tests_passed": 0,
+          "run": true,
+          "tests_passed": 6,
           "tests_total": 7
         },
         {
@@ -4062,14 +1726,14 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "quarkus",
+      "from": "jakarta",
+      "to": "spring",
       "layer": "presentation",
       "app": "websocketbot",
       "repeats": [
         {
-          "compile": true,
-          "run": true,
+          "compile": false,
+          "run": false,
           "tests_passed": 0,
           "tests_total": 21
         },
@@ -4088,19 +1752,957 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "whole applications",
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "whole_applications",
       "app": "cargotracker",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 3,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 3,
+          "tests_total": 34
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "coffee-shop",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "daytrader",
       "repeats": [
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 34
+          "tests_total": 20
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 20
         },
         {
           "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 20
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "petclinic",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 13
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 3,
+          "tests_total": 13
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 13
+        }
+      ]
+    },
+    {
+      "from": "jakarta",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "realworld",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "cart",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "converter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "counter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "helloservice",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "standalone",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "billpayment",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "concurrency-jobs",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "concurrency-taskcreator",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-async",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-interceptor",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-timersession",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "address-book",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "order",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "roster",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "dukeetf",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "dukeetf2",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "fileupload",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "hello-servlet",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-customer",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-hello",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-rsvp",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "mood",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "websocketbot",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "cargotracker",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 34
@@ -4114,9 +2716,9 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "whole applications",
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "whole_applications",
       "app": "coffee-shop",
       "repeats": [
         {
@@ -4126,13 +2728,13 @@
           "tests_total": 9
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 9
@@ -4140,35 +2742,973 @@
       ]
     },
     {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "whole applications",
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "whole_applications",
       "app": "daytrader",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "petclinic",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "realworld",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "business_domain",
+      "app": "cart",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "business_domain",
+      "app": "converter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "business_domain",
+      "app": "counter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "business_domain",
+      "app": "helloservice",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "business_domain",
+      "app": "standalone",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "billpayment",
       "repeats": [
         {
           "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 30
+          "tests_total": 14
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 30
+          "tests_total": 14
         },
         {
-          "compile": false,
+          "compile": true,
           "run": false,
           "tests_passed": 0,
-          "tests_total": 30
+          "tests_total": 14
         }
       ]
     },
     {
-      "from": "spring",
-      "to": "quarkus",
-      "layer": "whole applications",
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "concurrency-jobs",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "concurrency-taskcreator",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "ejb-async",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "ejb-interceptor",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "infrastructure",
+      "app": "ejb-timersession",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "persistence",
+      "app": "address-book",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 7,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "persistence",
+      "app": "order",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 5,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "persistence",
+      "app": "roster",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 24
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "dukeetf",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "dukeetf2",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 11,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "fileupload",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "hello-servlet",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "jaxrs-customer",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "jaxrs-hello",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 6,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 7,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "jaxrs-rsvp",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "mood",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "presentation",
+      "app": "websocketbot",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "cargotracker",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 29,
+          "tests_total": 34
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "coffee-shop",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "daytrader",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 20
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 20
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 20
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "whole_applications",
       "app": "petclinic",
       "repeats": [
         {
@@ -4178,13 +3718,1889 @@
           "tests_total": 13
         },
         {
+          "compile": true,
+          "run": true,
+          "tests_passed": 13,
+          "tests_total": 13
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 13,
+          "tests_total": 13
+        }
+      ]
+    },
+    {
+      "from": "quarkus",
+      "to": "spring",
+      "layer": "whole_applications",
+      "app": "realworld",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "cart",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "converter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "counter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "helloservice",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "business_domain",
+      "app": "standalone",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "billpayment",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "concurrency-jobs",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "concurrency-taskcreator",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-async",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-interceptor",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "infrastructure",
+      "app": "ejb-timersession",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "address-book",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "order",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "persistence",
+      "app": "roster",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "dukeetf",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "dukeetf2",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "fileupload",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "hello-servlet",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-customer",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-hello",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "jaxrs-rsvp",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "mood",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "presentation",
+      "app": "websocketbot",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "cargotracker",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "coffee-shop",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "daytrader",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "petclinic",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 36
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "jakarta",
+      "layer": "whole_applications",
+      "app": "realworld",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 62
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "business_domain",
+      "app": "cart",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "business_domain",
+      "app": "converter",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "business_domain",
+      "app": "counter",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 3,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "business_domain",
+      "app": "helloservice",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 17
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "business_domain",
+      "app": "standalone",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "billpayment",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 14
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "decorators",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "encoder",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "guessnumber",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "producerfields",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "producermethods",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 12
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "dependency_injection",
+      "app": "simplegreeting",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "infrastructure",
+      "app": "concurrency-jobs",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "infrastructure",
+      "app": "concurrency-taskcreator",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "infrastructure",
+      "app": "ejb-async",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 1
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 1
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 1
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "infrastructure",
+      "app": "ejb-interceptor",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "infrastructure",
+      "app": "ejb-timersession",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "persistence",
+      "app": "address-book",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 10,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 10,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "persistence",
+      "app": "order",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 4,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "persistence",
+      "app": "roster",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 2,
+          "tests_total": 25
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 25
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "dukeetf",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 4
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "dukeetf2",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 11
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "fileupload",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 6
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "hello-servlet",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 15
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 12,
+          "tests_total": 15
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "jaxrs-customer",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "jaxrs-hello",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 8
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "jaxrs-rsvp",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 10
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "mood",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 7
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "presentation",
+      "app": "websocketbot",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 21
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "cargotracker",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 34
+        },
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 15,
+          "tests_total": 34
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "coffee-shop",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 9
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "daytrader",
+      "repeats": [
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 30
+        },
+        {
+          "compile": true,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 30
+        },
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 30
+        }
+      ]
+    },
+    {
+      "from": "spring",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "petclinic",
+      "repeats": [
+        {
+          "compile": true,
+          "run": true,
+          "tests_passed": 12,
+          "tests_total": 13
+        },
+        {
           "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 13
         },
         {
-          "compile": true,
+          "compile": false,
           "run": false,
           "tests_passed": 0,
           "tests_total": 13
@@ -4194,7 +5610,7 @@
     {
       "from": "spring",
       "to": "quarkus",
-      "layer": "whole applications",
+      "layer": "whole_applications",
       "app": "realworld",
       "repeats": [
         {

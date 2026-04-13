@@ -11,11 +11,15 @@ const indexPath = path.join(process.cwd(), "public", "leaderboard.json");
 const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
 const LAYERS: Layer[] = index.layers;
 
-// Read each solution file
-const solutionDataList = index.solutions.map((filename: string) => {
-    const filePath = path.join(process.cwd(), "public", "results", filename);
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
-});
+// Autodiscover solution files in public/results
+const resultsDir = path.join(process.cwd(), "public", "results");
+const solutionFiles = fs
+    .readdirSync(resultsDir)
+    .filter((f) => f.endsWith(".json"))
+    .sort();
+const solutionDataList = solutionFiles.map((filename) =>
+    JSON.parse(fs.readFileSync(path.join(resultsDir, filename), "utf8")),
+);
 
 const SOLUTIONS: Solution[] = solutionDataList.map((sd: any) => sd.solution);
 const solutionResults: RawResult[][] = solutionDataList.map((sd: any) => sd.results);
@@ -333,8 +337,24 @@ const payload = JSON.stringify({
     }
 
     .leaderboard-root :global(.solution-name) {
-        font-size: var(--lb-step-2);
-        font-weight: 800;
+        font-size: var(--lb-step-0);
+        font-weight: 600;
+    }
+
+    .leaderboard-root :global(.rank-link) {
+        color: var(--lb-rank);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .leaderboard-root :global(.rank-link:hover) {
+        text-decoration: underline;
+    }
+
+    .leaderboard-root :global(.rank-star) {
+        font-size: 0.7em;
+        margin-left: 0.1em;
+        color: var(--lb-pill-text);
     }
 
     .leaderboard-root :global(.solution-model-line),
@@ -412,6 +432,22 @@ const payload = JSON.stringify({
         margin-bottom: 0.62rem;
         text-transform: uppercase;
         letter-spacing: 0.035em;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .leaderboard-root :global(.drill-title-left) {
+        justify-self: start;
+    }
+
+    .leaderboard-root :global(.drill-title-center) {
+        justify-self: center;
+    }
+
+    .leaderboard-root :global(.drill-title-right) {
+        justify-self: end;
     }
 
     .leaderboard-root :global(.drill-grid) {

@@ -16,21 +16,20 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
         <colgroup>
             <col class="col-rank" />
             <col class="col-solution" />
-            <col class="col-date" />
+            <col class="col-solution" />
             <col class="col-pass1" />
             <col class="col-pass1" />
             <col class="col-pass1 col-pass-focus" />
             <col class="col-pass3 col-group-divider" />
             <col class="col-pass3" />
             <col class="col-pass3 col-pass-focus" />
-            <col class="col-submission" />
         </colgroup>
         <thead>
             <tr>
                 <th rowspan="2">Rank</th>
                 <th rowspan="2">
-                    <button type="button" class="sort-button" data-sort-key="name">
-                        <span>Tool / Model</span>
+                    <button type="button" class="sort-button" data-sort-key="agent">
+                        <span>Agent</span>
                         <span class="sort-glyphs" aria-hidden="true">
                             <span class="sort-up">▴</span>
                             <span class="sort-down">▾</span>
@@ -38,8 +37,8 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
                     </button>
                 </th>
                 <th rowspan="2">
-                    <button type="button" class="sort-button" data-sort-key="date">
-                        <span>Date</span>
+                    <button type="button" class="sort-button" data-sort-key="model">
+                        <span>Model</span>
                         <span class="sort-glyphs" aria-hidden="true">
                             <span class="sort-up">▴</span>
                             <span class="sort-down">▾</span>
@@ -48,7 +47,6 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
                 </th>
                 <th class="group-head num group-pass1" colspan="3">Pass@1</th>
                 <th class="group-head num group-pass3" colspan="3">Pass@3</th>
-                <th class="submission-cell" rowspan="2">Submission</th>
             </tr>
             <tr>
                 <th class="num group-pass1">
@@ -102,25 +100,21 @@ const { tableId, rows, solutions, layerIdx } = Astro.props as Props;
                             data-solution-idx={String(row.solutionIdx)}
                             data-layer-idx={String(layerIdx)}
                         >
-                            <td class="rank num">#{row.rank}</td>
-                            <td>
-                                <strong class="solution-name">{solution.name}</strong>
-                                <div class="solution-model-line">
-                                    <em>({solution.model})</em>
-                                </div>
+                            <td class="rank num">
+                                {solution.submission ? (
+                                    <a href={solution.submission} class="rank-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">#{row.rank}<sup class="rank-star">*</sup></a>
+                                ) : (
+                                    <span>#{row.rank}</span>
+                                )}
                             </td>
-                            <td class="solution-date">{solution.date}</td>
+                            <td><strong class="solution-name">{solution.agent}</strong></td>
+                            <td>{solution.model}</td>
                             <td class:list={["num", "group-pass1", metricClass(row.compile1, 0)]}>{formatMetric(row.compile1)}</td>
                             <td class:list={["num", "group-pass1", metricClass(row.run1, 1)]}>{formatMetric(row.run1)}</td>
                             <td class:list={["num", "group-pass1", "metric-pass-col", metricClass(row.pass1, 2)]}>{formatMetric(row.pass1)}</td>
                             <td class:list={["num", "group-pass3", "group-divider", metricClass(row.compile3, 0)]}>{formatMetric(row.compile3)}</td>
                             <td class:list={["num", "group-pass3", metricClass(row.run3, 1)]}>{formatMetric(row.run3)}</td>
                             <td class:list={["num", "group-pass3", "metric-pass-col", metricClass(row.pass3, 2)]}>{formatMetric(row.pass3)}</td>
-                            <td class="submission-cell">
-                                <a class="submission-link" href="#" aria-label="Submission URL">
-                                    <i class="fa-solid fa-link" aria-hidden="true" />
-                                </a>
-                            </td>
                         </tr>
                     );
                 })

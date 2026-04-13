@@ -60,12 +60,5 @@
         "realworld"
       ]
     }
-  ],
-  "solutions": [
-    "claude.json",
-    "gemini.json",
-    "codex.json",
-    "glm5.json",
-    "kimi.json"
   ]
 }

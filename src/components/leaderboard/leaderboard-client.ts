@@ -2,10 +2,15 @@
 
 type MetricValue = number | null;
 
+const layerEq = (a: string, b: string): boolean =>
+  a.replace(/[-_]/g, " ") === b.replace(/[-_]/g, " ");
+
 interface Solution {
-  name: string;
+  agent: string;
   model: string;
+  variant?: string;
   date: string;
+  submission?: string;
 }
 interface Layer {
   id: string;
@@ -61,8 +66,8 @@ interface RankedRow {
 }
 
 type SortKey =
-  | "name"
-  | "date"
+  | "agent"
+  | "model"
   | "compile1"
   | "run1"
   | "pass1"
@@ -130,7 +135,7 @@ function buildScoreCube(
     return layers.map((layer) =>
       layer.apps.map((app) => {
         const matching = filtered.filter(
-          (r) => r.layer === layer.id && r.app === app,
+          (r) => layerEq(r.layer, layer.id) && r.app === app,
         );
         if (matching.length === 0)
           return {
@@ -181,7 +186,7 @@ function computeCanonicalTestsCube(
         const matching = results.filter((r) => {
           if (fromFilter !== "all" && r.from !== fromFilter) return false;
           if (toFilter !== "all" && r.to !== toFilter) return false;
-          return r.layer === layer.id && r.app === app;
+          return layerEq(r.layer, layer.id) && r.app === app;
         });
         for (const r of matching) {
           const { k1, k3 } = passAtK(r.repeats);
@@ -311,17 +316,17 @@ function sortOverallRows(
   const metricValue = (value: MetricValue): number => value ?? 0;
   const direction = sortDirection === "asc" ? 1 : -1;
   const sorted = [...rows].sort((a, b) => {
-    if (sortKey === "name") {
+    if (sortKey === "agent") {
       return (
-        solutions[a.solutionIdx].name.localeCompare(
-          solutions[b.solutionIdx].name,
+        solutions[a.solutionIdx].agent.localeCompare(
+          solutions[b.solutionIdx].agent,
         ) * direction
       );
     }
-    if (sortKey === "date") {
+    if (sortKey === "model") {
       return (
-        solutions[a.solutionIdx].date.localeCompare(
-          solutions[b.solutionIdx].date,
+        solutions[a.solutionIdx].model.localeCompare(
+          solutions[b.solutionIdx].model,
         ) * direction
       );
     }
@@ -341,8 +346,8 @@ function sortOverallRows(
                   : 0;
     if (diff !== 0) return diff * direction;
     return (
-      solutions[a.solutionIdx].name.localeCompare(
-        solutions[b.solutionIdx].name,
+      solutions[a.solutionIdx].agent.localeCompare(
+        solutions[b.solutionIdx].agent,
       ) * direction
     );
   });
@@ -358,17 +363,19 @@ function renderOverallTableRows(
   return rankedRows
     .map((row, rowIdx) => {
       const solution = solutions[row.solutionIdx];
+      const rankInner = solution.submission
+        ? `<a href="${solution.submission}" class="rank-link" target="_blank" rel="noopener" onclick="event.stopPropagation()">#${row.rank}<sup class="rank-star">*</sup></a>`
+        : `<span>#${row.rank}</span>`;
       return `<tr class="data-row" data-row-clickable="true" data-table-id="overall-body" data-row-idx="${rowIdx}" data-solution-idx="${row.solutionIdx}" data-layer-idx="-1">
-      <td class="rank num">#${row.rank}</td>
-      <td><strong class="solution-name">${solution.name}</strong><div class="solution-model-line"><em>(${solution.model})</em></div></td>
-      <td class="solution-date">${solution.date}</td>
+      <td class="rank num">${rankInner}</td>
+      <td><strong class="solution-name">${solution.agent}</strong></td>
+      <td>${solution.model}</td>
       ${renderOverallMetricCell(row.compile1, 0, ["group-pass1"])}
       ${renderOverallMetricCell(row.run1, 1, ["group-pass1"])}
       ${renderOverallMetricCell(row.pass1, 2, ["group-pass1", "metric-pass-col"])}
       ${renderOverallMetricCell(row.compile3, 0, ["group-pass3", "group-divider"])}
       ${renderOverallMetricCell(row.run3, 1, ["group-pass3"])}
       ${renderOverallMetricCell(row.pass3, 2, ["group-pass3", "metric-pass-col"])}
-      <td class="submission-cell"><a class="submission-link" href="#" aria-label="Submission URL"><i class="fa-solid fa-link" aria-hidden="true"></i></a></td>
     </tr>`;
     })
     .join("");
@@ -381,6 +388,8 @@ function buildDrillContent(
   scoreCube: AppScore[][][],
   solutionIdx: number,
   layerIdx: number,
+  fromFilter: string,
+  toFilter: string,
 ): string {
   const solution = data.solutions[solutionIdx];
   const layerIndexes =
@@ -408,10 +417,10 @@ function buildDrillContent(
     </tr>`;
   }
 
-  const title =
-    layerIdx === -1
-      ? `All Layers \u2014 ${solution.name} (${solution.model})`
-      : `${data.layers[layerIdx].name} \u2014 ${solution.name}`;
+  const submissionHref = solution.submission ?? "#";
+  const fromLabel = fromFilter === "all" ? "any" : fromFilter;
+  const toLabel = toFilter === "all" ? "any" : toFilter;
+  const title = `<span class="drill-title-left">${solution.date}</span><span class="drill-title-center">${fromLabel} \u2192 ${toLabel}</span><span class="drill-title-right"><a class="drill-submission" href="${submissionHref}" target="_blank" rel="noopener">Submission \u2197</a></span>`;
 
   return `<div class="drill-panel"><div class="drill-title">${title}</div><div class="drill-grid"><div class="drill-section"><div class="drill-section-title">Pass@1</div><div class="table-wrap"><table><colgroup><col class="layer-col" /><col class="compile-col" /><col class="deploy-col" /><col class="test-col" /></colgroup><thead><tr><th>Layer</th><th class="num">Compile</th><th class="num">Deploy</th><th class="num">Tests</th></tr></thead><tbody>${pass1Rows}</tbody></table></div></div><div class="drill-section"><div class="drill-section-title">Pass@3</div><div class="table-wrap"><table><colgroup><col class="layer-col" /><col class="compile-col" /><col class="deploy-col" /><col class="test-col" /></colgroup><thead><tr><th>Layer</th><th class="num">Compile</th><th class="num">Deploy</th><th class="num">Tests</th></tr></thead><tbody>${pass3Rows}</tbody></table></div></div></div></div>`;
 }
@@ -504,6 +513,8 @@ function toggleDrill(
   rowIdx: number,
   solutionIdx: number,
   layerIdx: number,
+  fromFilter: string,
+  toFilter: string,
   openDrill: OpenDrillState,
   openAppDrills: OpenAppDrillState,
 ): void {
@@ -522,12 +533,14 @@ function toggleDrill(
   drillRow.className = "drill-row";
   drillRow.id = `drill-${tableId}`;
   const drillCell = document.createElement("td");
-  drillCell.colSpan = 10;
+  drillCell.colSpan = 9;
   drillCell.innerHTML = buildDrillContent(
     data,
     scoreCube,
     solutionIdx,
     layerIdx,
+    fromFilter,
+    toFilter,
   );
   drillRow.appendChild(drillCell);
   targetRow.insertAdjacentElement("afterend", drillRow);
@@ -691,7 +704,7 @@ export function initLeaderboard(): void {
       } else {
         currentSortKey = nextKey;
         currentSortDirection =
-          nextKey === "name" ? "asc" : nextKey === "date" ? "desc" : "desc";
+          nextKey === "agent" || nextKey === "model" ? "asc" : "desc";
       }
       onSortChange();
       return;
@@ -750,6 +763,8 @@ export function initLeaderboard(): void {
       rowIdx,
       solutionIdx,
       layerIdx,
+      currentFrom,
+      currentTo,
       openDrill,
       openAppDrills,
     );

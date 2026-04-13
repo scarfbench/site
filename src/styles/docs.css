@@ -1,5 +1,15 @@
+:root {
+    --sl-font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --sl-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 html {
     font-size: 110%;
+    font-family: var(--sl-font);
+}
+
+body {
+    font-family: var(--sl-font);
 }
 
 .sb-note-box {
