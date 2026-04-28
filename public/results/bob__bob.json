@@ -1,0 +1,23 @@
+{
+  "solution": {
+    "agent": "bob",
+    "model": "bob",
+    "date": "2026-04-28"
+  },
+  "results": [
+    {
+      "from": "jakarta",
+      "to": "quarkus",
+      "layer": "whole_applications",
+      "app": "daytrader",
+      "repeats": [
+        {
+          "compile": false,
+          "run": false,
+          "tests_passed": 0,
+          "tests_total": 30
+        }
+      ]
+    }
+  ]
+}
