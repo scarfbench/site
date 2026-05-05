@@ -178,7 +178,8 @@ function computeCanonicalTestsCube(
 ): { k1: number; k3: number }[][] {
   return layers.map((layer) =>
     layer.apps.map((app) => {
-      // Test count is a property of (app, to) — collect max per target framework
+      // Each (from, to) conversion pair contributes its own test total — key
+      // by both so two pairs sharing the same target don't collapse together
       const pairMax1 = new Map<string, number>();
       const pairMax3 = new Map<string, number>();
 
@@ -190,8 +191,9 @@ function computeCanonicalTestsCube(
         });
         for (const r of matching) {
           const { k1, k3 } = passAtK(r.repeats);
-          pairMax1.set(r.to, Math.max(pairMax1.get(r.to) ?? 0, k1.testsTotal));
-          pairMax3.set(r.to, Math.max(pairMax3.get(r.to) ?? 0, k3.testsTotal));
+          const key = `${r.from}|${r.to}`;
+          pairMax1.set(key, Math.max(pairMax1.get(key) ?? 0, k1.testsTotal));
+          pairMax3.set(key, Math.max(pairMax3.get(key) ?? 0, k3.testsTotal));
         }
       }
 
